@@ -2,7 +2,7 @@ let generation = null; // Define generation as a global variable
 let displayedIds = [];
 let party = [];
 
-const pathBase = "https://github.com/bspiers13/pokemon-team-builder/";
+const pathBase = "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const fetchButton = document.getElementById("fetchPokemonBtn");
