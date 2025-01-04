@@ -1,0 +1,102 @@
+/* Body */
+body {
+    background-color: #232627;
+    margin-top: 200px; /* Accounts for the fixed #slots */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Slots */
+#slots {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #393C3F;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Slot Styling */
+.slot {
+    width: 113px;
+    height: 112px;
+    border: 2px solid grey;
+    background-color: #323537;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.slot:hover {
+    background-color: white;
+}
+
+.slot--full:hover {
+    cursor: pointer;
+}
+
+/* Pokémon Sprites */
+.sprite {
+    width: 112px;
+    height: 112px;
+    padding: 5px;
+    text-align: center;
+    background-color: #393C3F;
+    border-radius: 5px;
+}
+
+.sprite:hover {
+    /*transform: scale(1.2);*/
+    background-color: white;
+    cursor: pointer;
+}
+
+.sprite__img {
+    user-select: none;
+    user-drag: none;
+    width: 100%;
+    -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
+    transition: transform 0.1s ease;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+/* Containers */
+.pokedexContainer {
+    margin-bottom: 50px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#result h2 {
+    text-align: center;
+}
+
+h1, h2, label {
+        color: #FFFFFF;
+}
+
+#error {
+    color: #FFFFFF; /* White */
+}
+
+img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
