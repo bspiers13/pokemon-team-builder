@@ -2,6 +2,8 @@ let generation = null; // Define generation as a global variable
 let displayedIds = [];
 let party = [];
 
+const pathBase = "https://github.com/bspiers13/pokemon-team-builder/";
+
 document.addEventListener("DOMContentLoaded", async () => {
   const fetchButton = document.getElementById("fetchPokemonBtn");
   const resultDiv = document.getElementById("pokemon");
@@ -221,23 +223,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     const variant = getSpriteVariant(id);
 
     if (generation > 5) {
-      return `../assets/img/home/poke_capture_${formattedId}_000_${variant}_n_00000000_f_n.png`;
+      return `${pathBase}assets/img/home/poke_capture_${formattedId}_000_${variant}_n_00000000_f_n.png`;
     }
 
     const genPaths = {
       1: animated
-        ? `../assets/img/gen-ii-gif/${id}.gif`
-        : `../assets/img/gen-ii-png/${id}.png`,
+        ? `assets/img/gen-ii-gif/${id}.gif`
+        : `assets/img/gen-ii-png/${id}.png`,
       2: animated
-        ? `../assets/img/gen-ii-gif/${id}.gif`
-        : `../assets/img/gen-ii-png/${id}.png`,
-      3: `../assets/img/gen-iii/${id}.png`,
-      4: `../assets/img/gen-iv/platinum/${id}.png`,
-      5: `../assets/img/gen-v/${id}.png`,
+        ? `assets/img/gen-ii-gif/${id}.gif`
+        : `assets/img/gen-ii-png/${id}.png`,
+      3: `assets/img/gen-iii/${id}.png`,
+      4: `assets/img/gen-iv/platinum/${id}.png`,
+      5: `assets/img/gen-v/${id}.png`,
     };
 
-    return genPaths[generation] || "";
+    // Concatenate pathBase with the selected path
+    return pathBase + (genPaths[generation] || "");
   }
+
+  // Example usage
+  spriteImg.src = getSpritePath(id, animated);
 
   //Get sprite variant - needed for getting home renders
   function getSpriteVariant(id) {
