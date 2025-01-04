@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const slots = Array.from(document.querySelectorAll(".slot"));
   const generationInput = document.getElementById("generation");
 
-  const pokedexData = await loadJson("/assets/json/pokedex_data.json");
-  const pokemonData = await loadJson("/assets/json/pokemon_species_data.json");
+  const pokedexData = await loadJson("../assets/json/pokedex_data.json");
+  const pokemonData = await loadJson(
+    "../assets/json/pokemon_species_data.json"
+  );
 
   const generationDexes = [
     "kanto",
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     ["kalos-central", "kalos-coastal", "kalos-mountain"],
     ["updated-melemele", "updated-akala", "updated-ulaula", "updated-poni"],
     ["galar", "isle-of-armor", "crown-tundra"],
-    ["paldea", "kitakami", "blueberry"]
+    ["paldea", "kitakami", "blueberry"],
   ];
   const generationLastIds = [151, 251, 386, 493, 649, 721, 809, 905, 1010];
 
@@ -60,7 +62,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  slots.forEach((slot) => slot.addEventListener("click", () => clearSlot(slot)));
+  slots.forEach((slot) =>
+    slot.addEventListener("click", () => clearSlot(slot))
+  );
 
   function displayError(message) {
     errorDiv.innerHTML = `<p>${message}</p>`;
@@ -79,7 +83,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function loadJson(path) {
     try {
       const response = await fetch(path);
-      if (!response.ok) throw new Error(`Failed to load JSON: ${response.statusText}`);
+      if (!response.ok)
+        throw new Error(`Failed to load JSON: ${response.statusText}`);
       return await response.json();
     } catch (error) {
       console.error(error);
@@ -90,7 +95,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function displayPokedex(pokedexName, animated) {
     const pokedexIds = pokedexData[pokedexName];
     const container = createPokedexContainer(
-      pokedexName.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase())
+      pokedexName
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (char) => char.toUpperCase())
     );
     appendSprites(container, pokedexIds, animated);
   }
@@ -216,11 +223,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const genPaths = {
-      1: animated ? `../assets/img/gen-ii-gif/${id}.gif` : `../assets/img/gen-ii-png/${id}.png`,
-      2: animated ? `../assets/img/gen-ii-gif/${id}.gif` : `../assets/img/gen-ii-png/${id}.png`,
+      1: animated
+        ? `../assets/img/gen-ii-gif/${id}.gif`
+        : `../assets/img/gen-ii-png/${id}.png`,
+      2: animated
+        ? `../assets/img/gen-ii-gif/${id}.gif`
+        : `../assets/img/gen-ii-png/${id}.png`,
       3: `../assets/img/gen-iii/${id}.png`,
       4: `../assets/img/gen-iv/platinum/${id}.png`,
-      5: `../assets/img/gen-v/${id}.png`
+      5: `../assets/img/gen-v/${id}.png`,
     };
 
     return genPaths[generation] || "";
@@ -241,11 +252,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       1015: "mo",
       1016: "mo",
       1017: "fo",
-      1024: "mf"
+      1024: "mf",
     };
     if (exceptions[id]) return exceptions[id];
 
-    const { gender_rate, has_gender_differences } = pokemonData[Object.keys(pokemonData)[id - 1]];
+    const { gender_rate, has_gender_differences } =
+      pokemonData[Object.keys(pokemonData)[id - 1]];
     if (gender_rate === -1) return "uk";
     if (gender_rate === 8) return "fo";
     if (gender_rate === 0) return "mo";
