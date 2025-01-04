@@ -2,7 +2,8 @@ let generation = null; // Define generation as a global variable
 let displayedIds = [];
 let party = [];
 
-const pathBase = "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/";
+const pathBase =
+  "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const fetchButton = document.getElementById("fetchPokemonBtn");
@@ -266,8 +267,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const { gender_rate, has_gender_differences } =
       pokemonData[Object.keys(pokemonData)[id - 1]];
-    console.log(pokemonData);
-    console.log(Object.keys(pokemonData));
     if (gender_rate === -1) return "uk";
     if (gender_rate === 8) return "fo";
     if (gender_rate === 0) return "mo";
