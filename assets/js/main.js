@@ -229,11 +229,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const genPaths = {
       1: animated
-        ? `assets/img/gen-ii-gif/${id}.gif`
-        : `assets/img/gen-ii-png/${id}.png`,
+        ? `assets/img/gen-ii/animated/${id}.gif`
+        : `assets/img/gen-ii/${id}.png`,
       2: animated
-        ? `assets/img/gen-ii-gif/${id}.gif`
-        : `assets/img/gen-ii-png/${id}.png`,
+        ? `assets/img/gen-ii/animated/${id}.gif`
+        : `assets/img/gen-ii/${id}.png`,
       3: `assets/img/gen-iii/${id}.png`,
       4: `assets/img/gen-iv/platinum/${id}.png`,
       5: `assets/img/gen-v/${id}.png`,
