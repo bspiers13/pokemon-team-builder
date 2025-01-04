@@ -9,9 +9,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const slots = Array.from(document.querySelectorAll(".slot"));
   const generationInput = document.getElementById("generation");
 
-  const pokedexData = await loadJson("../assets/json/pokedex_data.json");
+  const pokedexData = await loadJson(
+    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
+  );
   const pokemonData = await loadJson(
-    "../assets/json/pokemon_species_data.json"
+    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
   );
 
   const generationDexes = [
