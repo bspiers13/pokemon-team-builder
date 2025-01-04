@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
   );
   const pokemonData = await loadJson(
-    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
+    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_species_data.json"
   );
 
   const generationDexes = [
