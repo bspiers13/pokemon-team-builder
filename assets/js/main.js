@@ -260,6 +260,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const { gender_rate, has_gender_differences } =
       pokemonData[Object.keys(pokemonData)[id - 1]];
+    console.log(pokemonData);
+    console.log(Object.keys(pokemonData));
     if (gender_rate === -1) return "uk";
     if (gender_rate === 8) return "fo";
     if (gender_rate === 0) return "mo";
