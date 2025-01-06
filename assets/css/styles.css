@@ -1,19 +1,55 @@
 /* Body */
 body {
     background-color: #232627;
-    margin-top: 200px; /* Accounts for the fixed #slots */
-    font-family: 'Arial', sans-serif;
+    margin-top: 200px;
+    font-family: "Arial", sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+/* Background Images */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -12.3%;
+    width: 50%;
+    height: 50vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    z-index: -1;
+    pointer-events: none;
+    filter: grayscale(20%) opacity(80%);
+}
+
+body::before {
+    left: -19.6%;
+    background-image: url("https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/img/gen-ii/137.png");
+    transform: scaleX(-1);
+}
+
+body::after {
+    right: -15.1%;
+    background-image: url("https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/img/gen-ii/235.png");
+    transform: scaleX(1);
 }
 
 /* Slots */
 #slots {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: #393C3F;
+    /*gap: 132px;*/
+    background-color: #393c3f;
     padding: 10px 0;
     z-index: 1000;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
@@ -21,7 +57,7 @@ body {
 
 /* Slot Styling */
 .slot {
-    width: 113px;
+    min-width: 112px;
     height: 112px;
     border: 2px solid grey;
     background-color: #323537;
@@ -48,7 +84,7 @@ body {
     height: 112px;
     padding: 5px;
     text-align: center;
-    background-color: #393C3F;
+    background-color: #393c3f;
     border-radius: 5px;
 }
 
@@ -62,10 +98,21 @@ body {
     user-select: none;
     user-drag: none;
     width: 100%;
-    -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
+    -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.4));
     transition: transform 0.1s ease;
 }
+
+img,
+#result {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 
 .pixelated {
     image-rendering: pixelated;
@@ -80,23 +127,31 @@ body {
     flex-wrap: wrap;
 }
 
-#result h2 {
-    text-align: center;
-}
-
-h1, h2, label {
-        color: #FFFFFF;
+/* Text Colour */
+h1,
+h2,
+label {
+    color: #ffffff;
 }
 
 #error {
-    color: #FFFFFF; /* White */
+    color: #ffffff; /* White */
 }
 
-img {
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+/*
+#result {
+    width: 1500px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+}
+*/
+
+
+/* Results Container */
+#result {
+    max-width: 1700px;
+    text-align: center;
 }
