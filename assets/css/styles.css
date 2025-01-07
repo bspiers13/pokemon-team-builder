@@ -183,16 +183,15 @@ img,
 
 .accordionArrow {
     position: absolute;
-    right: 0; /* Position the arrow to the right */
-    top: 0; /* Align it to the top */
-    height: 100%; /* Set height equal to the height of .pokedexHeading */
-    width: 5%; /* Make it a square, so width equals height */
-    background-image: url('/assets/img/accordionArrow.webp');
-    transform: rotate(180deg);
-    background-size: contain; /* Ensure the arrow fits within the box */
-    background-repeat: no-repeat; /* Prevent image repetition */
-    background-position: center; /* Center the image inside the box */
-    cursor: pointer; /* Optional: Change cursor to pointer for interactivity */
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 5%;
+    background-image: url('https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/img/accordionArrow.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
 
 /* Text Colour */
