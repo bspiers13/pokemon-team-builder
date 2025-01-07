@@ -112,11 +112,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   //Create new pokedex container - used to separate reg dex and nat dex, and in gens 6+ to separate their ingame pokedexes
   function createPokedexContainer(title) {
-    const heading = document.createElement("h2");
+    //Create heading
+    const heading = document.createElement("div");
     heading.classList.add("pokedexHeading");
     heading.textContent = title;
     resultDiv.appendChild(heading);
+    
+    //Create accordion arrow for heading
+    const accordionArrow = document.createElement("div");
+    accordionArrow.classList.add("accordionArrow");
+    heading.appendChild(accordionArrow);
 
+    //Create sprite container
     const container = document.createElement("div");
     container.classList.add("pokedexContainer");
     resultDiv.appendChild(container);
@@ -126,12 +133,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       //If container is collapsed, uncollapse in this order to allow the heading animation to complete before sprites are sent out
       if (heading.classList.contains("collapsed")) {
         heading.classList.toggle("collapsed");
+        accordionArrow.classList.toggle("collapsed");
         setTimeout(() => {
           container.classList.toggle("collapsed");
         }, 100);
       //If container is not collapsed, collapse in this order to allow the sprites animation to complete before heading is rounded
       } else {
         container.classList.toggle("collapsed");
+        accordionArrow.classList.toggle("collapsed");
         setTimeout(() => {
           if (container.classList.contains("collapsed")) {
             heading.classList.toggle("collapsed");

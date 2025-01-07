@@ -42,6 +42,11 @@ body::after {
     bottom: -13.9%;
 }
 
+.fetchPokemon {
+    margin-bottom: 20px;
+}
+
+
 /* Slots */
 #slots {
     display: flex;
@@ -147,12 +152,16 @@ img,
 
 .pokedexHeading {
     background-color: rgb(255, 255, 255);
+    margin-top: 10px;
     margin-bottom: 0;
     padding: 15px 0;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     cursor: pointer;
     transition: border-radius 0.3s ease;
+    font-weight: bold;
+    font-size: 25px;
+    position: relative;
 }
 
 .pokedexContainer.collapsed {
@@ -166,6 +175,24 @@ img,
 .pokedexHeading.collapsed {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+}
+
+.accordionArrow.collapsed {
+    transform: rotate(0deg);
+}
+
+.accordionArrow {
+    position: absolute;
+    right: 0; /* Position the arrow to the right */
+    top: 0; /* Align it to the top */
+    height: 100%; /* Set height equal to the height of .pokedexHeading */
+    width: 5%; /* Make it a square, so width equals height */
+    background-image: url('/assets/img/accordionArrow.webp');
+    transform: rotate(180deg);
+    background-size: contain; /* Ensure the arrow fits within the box */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center; /* Center the image inside the box */
+    cursor: pointer; /* Optional: Change cursor to pointer for interactivity */
 }
 
 /* Text Colour */
