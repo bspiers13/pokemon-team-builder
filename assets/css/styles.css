@@ -30,14 +30,14 @@ body::after {
 
 body::before {
     left: -19.6%;
-    background-image: url("https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/img/gen-ii/137.png");
+    background-image: url("https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/img/gen-ii-webp/137.webp");
     transform: scaleX(-1);
     bottom: -12.2%;
 }
 
 body::after {
     right: -15.1%;
-    background-image: url("https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/img/gen-ii/235.png");
+    background-image: url("https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/img/gen-ii-webp/235.webp");
     transform: scaleX(1);
     bottom: -13.9%;
 }

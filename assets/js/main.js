@@ -254,15 +254,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const variant = getSpriteVariant(id);
 
     if (generation > 5) {
-      return `${pathBase}assets/img/home/poke_capture_${formattedId}_000_${variant}_n_00000000_f_n.png`;
+      return `${pathBase}assets/img/home-webp/poke_capture_${formattedId}_000_${variant}_n_00000000_f_n.webp`;
     }
 
     const genPaths = {
-      1: animated ? `assets/img/gen-ii/animated/${id}.gif` : `assets/img/gen-ii/${id}.png`,
-      2: animated ? `assets/img/gen-ii/animated/${id}.gif` : `assets/img/gen-ii/${id}.png`,
-      3: `assets/img/gen-iii/${id}.png`,
-      4: `assets/img/gen-iv/platinum/${id}.png`,
-      5: `assets/img/gen-v/${id}.png`
+      1: animated ? `assets/img/gen-ii/animated/${id}.gif` : `assets/img/gen-ii-webp/${id}.webp`,
+      2: animated ? `assets/img/gen-ii/animated/${id}.gif` : `assets/img/gen-ii-webp/${id}.webp`,
+      3: `assets/img/gen-iii-webp/${id}.webp`,
+      4: `assets/img/gen-iv/platinum-webp/${id}.webp`,
+      5: `assets/img/gen-v-webp/${id}.webp`
     };
 
     // Concatenate pathBase with the selected path
