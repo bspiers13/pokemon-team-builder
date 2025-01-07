@@ -123,18 +123,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Add click event listener to the heading
     heading.addEventListener("click", () => {
-      if (container.classList.contains("pokedexContainer")) {
-        container.classList.toggle("collapsed");
+      //If container is collapsed, uncollapse in this order to allow the heading animation to complete before sprites are sent out
+      if (heading.classList.contains("collapsed")) {
         heading.classList.toggle("collapsed");
+        setTimeout(() => {
+          container.classList.toggle("collapsed");
+        }, 100);
+      //If container is not collapsed, collapse in this order to allow the sprites animation to complete before heading is rounded
+      } else {
+        container.classList.toggle("collapsed");
+        setTimeout(() => {
+          if (container.classList.contains("collapsed")) {
+            heading.classList.toggle("collapsed");
+          }
+        }, 900);
       }
     });
 
     //Set to collapsed on load and then open then up, doing the animation
     container.classList.toggle("collapsed");
-    heading.classList.toggle("collapsed");
+    //Set in this 
     setTimeout(() => {
-      container.classList.toggle("collapsed");
-      heading.classList.toggle("collapsed");
+       container.classList.toggle("collapsed");
     }, 1);
 
     return container;
