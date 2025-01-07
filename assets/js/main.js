@@ -2,8 +2,7 @@ let generation = null; // Define generation as a global variable
 let displayedIds = [];
 let party = [];
 
-const pathBase =
-  "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/";
+const pathBase = "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const fetchButton = document.getElementById("fetchPokemonBtn");
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     ["kalos-central", "kalos-coastal", "kalos-mountain"],
     ["updated-melemele", "updated-akala", "updated-ulaula", "updated-poni"],
     ["galar", "isle-of-armor", "crown-tundra"],
-    ["paldea", "kitakami", "blueberry"],
+    ["paldea", "kitakami", "blueberry"]
   ];
   const generationLastIds = [151, 251, 386, 493, 649, 721, 809, 905, 1010];
 
@@ -67,9 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  slots.forEach((slot) =>
-    slot.addEventListener("click", () => clearSlot(slot))
-  );
+  slots.forEach((slot) => slot.addEventListener("click", () => clearSlot(slot)));
 
   function displayError(message) {
     errorDiv.innerHTML = `<p>${message}</p>`;
@@ -88,8 +85,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function loadJson(path) {
     try {
       const response = await fetch(path);
-      if (!response.ok)
-        throw new Error(`Failed to load JSON: ${response.statusText}`);
+      if (!response.ok) throw new Error(`Failed to load JSON: ${response.statusText}`);
       return await response.json();
     } catch (error) {
       console.error(error);
@@ -100,9 +96,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function displayPokedex(pokedexName, animated) {
     const pokedexIds = pokedexData[pokedexName];
     const container = createPokedexContainer(
-      pokedexName
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, (char) => char.toUpperCase())
+      pokedexName.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase())
     );
     appendSprites(container, pokedexIds, animated);
   }
@@ -119,12 +113,29 @@ document.addEventListener("DOMContentLoaded", async () => {
   //Create new pokedex container - used to separate reg dex and nat dex, and in gens 6+ to separate their ingame pokedexes
   function createPokedexContainer(title) {
     const heading = document.createElement("h2");
+    heading.classList.add("pokedexHeading");
     heading.textContent = title;
     resultDiv.appendChild(heading);
 
     const container = document.createElement("div");
     container.classList.add("pokedexContainer");
     resultDiv.appendChild(container);
+
+    // Add click event listener to the heading
+    heading.addEventListener("click", () => {
+      if (container.classList.contains("pokedexContainer")) {
+        container.classList.toggle("collapsed");
+        heading.classList.toggle("collapsed");
+      }
+    });
+
+    //Set to collapsed on load and then open then up, doing the animation
+    container.classList.toggle("collapsed");
+    heading.classList.toggle("collapsed");
+    setTimeout(() => {
+      container.classList.toggle("collapsed");
+      heading.classList.toggle("collapsed");
+    }, 1);
 
     return container;
   }
@@ -228,15 +239,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const genPaths = {
-      1: animated
-        ? `assets/img/gen-ii/animated/${id}.gif`
-        : `assets/img/gen-ii/${id}.png`,
-      2: animated
-        ? `assets/img/gen-ii/animated/${id}.gif`
-        : `assets/img/gen-ii/${id}.png`,
+      1: animated ? `assets/img/gen-ii/animated/${id}.gif` : `assets/img/gen-ii/${id}.png`,
+      2: animated ? `assets/img/gen-ii/animated/${id}.gif` : `assets/img/gen-ii/${id}.png`,
       3: `assets/img/gen-iii/${id}.png`,
       4: `assets/img/gen-iv/platinum/${id}.png`,
-      5: `assets/img/gen-v/${id}.png`,
+      5: `assets/img/gen-v/${id}.png`
     };
 
     // Concatenate pathBase with the selected path
@@ -261,12 +268,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       1015: "mo",
       1016: "mo",
       1017: "fo",
-      1024: "mf",
+      1024: "mf"
     };
     if (exceptions[id]) return exceptions[id];
 
-    const { gender_rate, has_gender_differences } =
-      pokemonData[Object.keys(pokemonData)[id - 1]];
+    const { gender_rate, has_gender_differences } = pokemonData[Object.keys(pokemonData)[id - 1]];
     if (gender_rate === -1) return "uk";
     if (gender_rate === 8) return "fo";
     if (gender_rate === 0) return "mo";
