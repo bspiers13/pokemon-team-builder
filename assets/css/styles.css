@@ -192,6 +192,7 @@ img,
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    transform: rotate(180deg);
 }
 
 /* Text Colour */
