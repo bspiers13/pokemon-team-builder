@@ -14,6 +14,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   const header = document.getElementById("header");
   const moreDetails = document.getElementById("moreDetails");
 
+
+
+  const pokedexData = await loadJson(
+    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
+  );
+  const pokemonData = await loadJson(
+    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokemon_species_data.json"
+  );
+  const moveData = await loadJson(
+    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokemon_moves.json"
+  );
+  
+  console.log("Cyndaquil's move data:", moveData[154]);
+  
   //More details button
   detailsBtn.addEventListener("click", () => {
     header.classList.toggle("expanded");
@@ -23,13 +37,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       ? "Less Details" 
       : "More Details";
   });
-
-  const pokedexData = await loadJson(
-    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
-  );
-  const pokemonData = await loadJson(
-    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokemon_species_data.json"
-  );
 
   const generationDexes = [
     "kanto",
@@ -240,7 +247,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
         typesDiv.innerHTML = ""; // Reset to default state
       } else {
-        if (parseInt(slot.id) !== pokemonId) {
+        if (parseInt(slot.id) !== pokemonId) {          
           slot.classList.add("slot--full");
           slot.id = pokemonId;
 
@@ -310,4 +317,83 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     return "mf";
   }
+  
+  function formatLearnMethod(method) {
+    const methods = {
+      "egg": "Egg",
+      "machine": "TM/HM",
+      "tutor": "Tutor",
+      "level-up": "Level",
+      "stadium-surf": "Stadium",
+      "light-ball-egg": "Pikachu Egg"
+    };
+    return methods[method] || method;
+  }
+  
+  // Update the getMovesForPokemon function
+  function updateMoveSuggestions(pokemonId) {
+    const datalist = document.getElementById("move-suggestions");
+    datalist.innerHTML = ""; // Clear previous options
+
+    if (!pokemonId) return;
+
+    const pokemonName = Object.keys(pokemonData)[pokemonId - 1].toLowerCase();
+    const moves = moveData[pokemonName] 
+      ? Object.values(moveData[pokemonName]).flat()
+      : [];
+
+    // Add unique moves to datalist
+    moves.filter((v,i,a) => a.findIndex(t => t.move === v.move) === i)
+      .forEach(move => {
+        const option = document.createElement("option");
+        option.value = move.move.replace(/-/g, " ");
+        option.title = formatLearnMethod(move.learn_method); // Show method on hover
+        datalist.appendChild(option);
+      });
+  }
+
+  // Update the autocomplete event listeners
+  document.querySelectorAll('.move-input').forEach(input => {
+    input.addEventListener('focus', () => {
+      const slot = input.closest('.moves-container')
+        .previousElementSibling
+        .previousElementSibling;
+      const pokemonId = parseInt(slot.id);
+      updateMoveSuggestions(pokemonId);
+    });
+  });
+
+  //// Update the showSuggestions function to use ID-based data
+  //function showSuggestions(input, moves, query) {
+  //  console.log("Input value:", query); // Debug 4
+  //  console.log("All matching moves:", moves); // Debug 5
+  //  const existing = input.parentNode.querySelector('.suggestions');
+  //  if (existing) existing.remove();
+//
+  //  const matches = moves.filter(m => 
+  //    m.move.replace(/-/g, ' ').includes(query)
+  //  ).slice(0, 5);
+//
+  //  if (matches.length > 0) {
+  //    const dropdown = document.createElement('div');
+  //    dropdown.className = 'suggestions';
+//
+  //    matches.forEach(move => {
+  //      const div = document.createElement('div');
+  //      div.innerHTML = `
+  //        <span>${move.move.replace(/-/g, ' ')}</span>
+  //        <span class="learn-method ${move.learn_method}">
+  //          ${formatLearnMethod(move.learn_method)}
+  //        </span>
+  //      `;
+  //      div.addEventListener('click', () => {
+  //        input.value = move.move.replace(/-/g, ' ');
+  //        dropdown.remove();
+  //      });
+  //      dropdown.appendChild(div);
+  //    });
+//
+  //    input.parentNode.appendChild(dropdown);
+  //  }
+  //}
 });

@@ -324,6 +324,14 @@ label {
   height: auto;
 }
 
+datalist {
+  display: none; /* Hide default dropdown */
+  max-height: 300px;
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none; /* Hide arrow in Chrome */
+}
 
 /* Media query for screens 1080px wide or less */
 @media screen and (max-width: 1920px) {
@@ -357,6 +365,7 @@ label {
   
   .moves-container {
     width: 80px;
+    position: relative;
   }
   
   #result {
