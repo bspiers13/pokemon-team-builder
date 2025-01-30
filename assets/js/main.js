@@ -10,6 +10,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   const errorDiv = document.getElementById("error");
   const slots = Array.from(document.querySelectorAll(".slot"));
   const generationInput = document.getElementById("generation");
+  const detailsBtn = document.getElementById("detailsBtn");
+  const header = document.getElementById("header");
+  const moreDetails = document.getElementById("moreDetails");
+
+  //More details button
+  detailsBtn.addEventListener("click", () => {
+    header.classList.toggle("expanded");
+    detailsBtn.classList.toggle("expanded");
+    
+    detailsBtn.textContent = header.classList.contains("expanded") 
+      ? "Less Details" 
+      : "More Details";
+  });
 
   const pokedexData = await loadJson(
     "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
@@ -215,34 +228,35 @@ document.addEventListener("DOMContentLoaded", async () => {
   function updateSlots() {
     console.log("Party: ", party);
     slots.forEach((slot, index) => {
-      const pokemonId = party[index]; // Get the Pokémon ID from the party array
+      const pokemonId = party[index];
+      const slotContainer = slot.parentElement;
+      const typesDiv = slotContainer.querySelector('.types');
 
       if (pokemonId === undefined) {
-        // Clear slot only if it has content
         if (slot.classList.contains("slot--full")) {
           slot.classList.remove("slot--full");
-          slot.innerHTML = ""; // Clear the slot
-          slot.id = ""; // Reset the slot's ID
+          slot.innerHTML = "";
+          slot.id = "";
         }
+        typesDiv.innerHTML = ""; // Reset to default state
       } else {
-        // Update the slot ONLY if it doesn't already match the Pokémon in the party array
         if (parseInt(slot.id) !== pokemonId) {
           slot.classList.add("slot--full");
-          slot.id = pokemonId; // Update the slot's ID
+          slot.id = pokemonId;
 
-          // Create the Pokémon sprite
           const spriteImg = document.createElement("img");
-          spriteImg.src = getSpritePath(pokemonId, true); // Use animated sprites for slots
+          spriteImg.src = getSpritePath(pokemonId, true);
           spriteImg.classList.add("sprite__img");
-          spriteImg.alt = `${Object.keys(pokemonData)[pokemonId - 1]} sprite`;
+          if (generation < 6) spriteImg.classList.add("pixelated");
 
-          if (generation < 6) {
-            spriteImg.classList.add("pixelated");
-          }
-
-          // Clear the slot content and add the new sprite
           slot.innerHTML = "";
           slot.appendChild(spriteImg);
+
+          // Update types display
+          const pokemon = pokemonData[Object.keys(pokemonData)[pokemonId - 1]];
+          typesDiv.innerHTML = pokemon.types.map(type => 
+            `<span class="type-pill type-${type}">${type}</span>`
+          ).join('');
         }
       }
     });
@@ -268,9 +282,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Concatenate pathBase with the selected path
     return pathBase + (genPaths[generation] || "");
   }
-
-  // Example usage
-  spriteImg.src = getSpritePath(id, animated);
 
   //Get sprite variant - needed for getting home renders
   function getSpriteVariant(id) {
