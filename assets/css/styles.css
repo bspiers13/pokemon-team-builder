@@ -52,19 +52,25 @@ body::after {
   justify-content: center;
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
   /*gap: 132px;*/
   background-color: #393c3f;
   padding: 10px 0;
   z-index: 1000;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-  height: auto;
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: column;
   width: 100%;
+  /*transition: all 0.5s ease;*/
+  overflow: hidden;
+  
+  max-height: 226px;
 }
+
+#header.expanded {
+  max-height: 100%;
+}
+
 
 /* Slot container */
 #slotContainer {
@@ -233,27 +239,14 @@ label {
   text-align: center;
 }
 
-#header {
-  transition: all 0.5s ease;
-  /*max-height: 200px;*/
-  overflow: hidden;
-}
-
 .types {
   color: white;
   font-size: 0.9em;
-  /*height: 20px;*/
-  opacity: 0;
-  max-height: 0;
-  transition: all 0.5s ease;
   pointer-events: none;
   height: 23.3px;
-}
-
-#header.expanded .types {
-  opacity: 1;
-  max-height: 20px;
-  pointer-events: auto;
+  text-align: center;
+  min-width: 112px;
+  padding: 5px 0;
 }
 
 .more-details {
@@ -298,15 +291,39 @@ label {
   flex-direction: column;
   align-items: center;
   margin: 10px;
-  
+  transition: none !important;
 }
 
-.types {
-  text-align: center;
-  min-width: 112px; /* Match slot width */
-  padding: 5px 0;
-  /* Keep existing transitions and other properties */
+/* Pokemon movesets */
+.move-input {
+  width: 100%;
+  margin: 2px;
+  padding: 3px;
+  font-size: 0.8em;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background-color: #444;
+  color: white;
 }
+
+.move-input::placeholder {
+  color: #999;
+}
+
+.moves-container {
+  width: 136px;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 0;
+}
+
+#header.expanded .moves-container {
+  display: flex;
+  height: auto;
+}
+
 
 /* Media query for screens 1080px wide or less */
 @media screen and (max-width: 1920px) {
@@ -336,6 +353,10 @@ label {
     font-size: 8px;
     margin: 0 1px;
     padding: 2px 4px;
+  }
+  
+  .moves-container {
+    width: 80px;
   }
   
   #result {
