@@ -235,10 +235,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       for (let i = index; i < party.length; i++) {
         const currentMoves = moveContainers[i + 1].querySelectorAll(".move-input");
         const targetMoves = moveContainers[i].querySelectorAll(".move-input");
+        const targetPokemonId = party[i]; // Get the new Pokémon ID for this slot
 
         currentMoves.forEach((moveInput, j) => {
-          targetMoves[j].value = moveInput.value; // Move move data down
-          updateMoveInputColor(targetMoves[j]); // Update move background color
+          targetMoves[j].value = moveInput.value;
+          // Update datalist based on target Pokémon
+          updateMoveSuggestions(targetPokemonId);
+          updateMoveInputColor(targetMoves[j]);
         });
       }
 
@@ -247,7 +250,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (lastMoves) {
         lastMoves.forEach((moveInput) => {
           moveInput.value = "";
-          updateMoveInputColor(moveInput); // Reset background color
+          updateMoveInputColor(moveInput);
         });
       }
 
@@ -260,7 +263,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const value = input.value.trim().toLowerCase();
     const datalist = document.getElementById("move-suggestions");
 
-    // Find matching option
+    //Find matching option
     const option = [...datalist.options].find((opt) => opt.value.toLowerCase() === value);
 
     if (option) {
@@ -284,7 +287,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           slot.innerHTML = "";
           slot.id = "";
         }
-        typesDiv.innerHTML = ""; // Reset to default state
+        typesDiv.innerHTML = ""; //Reset to default state
       } else {
         if (parseInt(slot.id) !== pokemonId) {
           slot.classList.add("slot--full");
@@ -298,7 +301,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           slot.innerHTML = "";
           slot.appendChild(spriteImg);
 
-          // Update types display
+          //Update types display
           const pokemon = pokemonData[Object.keys(pokemonData)[pokemonId - 1]];
           typesDiv.innerHTML = pokemon.types
             .map((type) => `<span class="type-pill type-${type}">${type}</span>`)
@@ -306,7 +309,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       }
     });
-    
+
     //calculateWeaknesses();
     //calculateMoveEffectiveness();
   }
@@ -412,9 +415,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       option.value = move.move.replace(/-/g, " ");
       option.dataset.type = move.type;
       option.dataset.learnMethod = move.learn_method;
-      option.dataset.power = move.power;
-      option.dataset.pp = move.pp;
-      option.title = `${formatLearnMethod(move.learn_method)} | Power: ${move.power} | PP: ${move.pp}`; // Fixed template literal
+      //option.dataset.power = move.power;
+      //option.dataset.pp = move.pp;
+      //option.title = `${formatLearnMethod(move.learn_method)} | Power: ${move.power} | PP: ${move.pp}`;
       datalist.appendChild(option);
     });
   }
@@ -444,40 +447,40 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Reset to default color
         e.target.style.backgroundColor = "#323537";
       }
-      input.addEventListener("input", calculateMoveEffectiveness);
+      //input.addEventListener("input", calculateMoveEffectiveness);
     });
   });
 
   //function calculateWeaknesses() {
   //  const weaknesses = {};
-//
+  //
   //  party.forEach((pokemonId) => {
   //    const pokemon = pokemonData[Object.keys(pokemonData)[pokemonId - 1]];
   //    pokemon.types.forEach((type) => {
   //      const typeData = typeEffectivenessData[type];
   //      if (!typeData) return;
-//
+  //
   //      typeData.weak.forEach((weakType) => {
   //        weaknesses[weakType] = (weaknesses[weakType] || 0) + 1;
   //      });
   //    });
   //  });
-//
+  //
   //  displayWeaknesses(weaknesses);
   //}
-//
+  //
   //function calculateMoveEffectiveness() {
   //  const moveEffectiveness = {};
-//
+  //
   //  document.querySelectorAll(".move-input").forEach((input) => {
   //    const moveName = input.value.trim().toLowerCase();
   //    const datalist = document.getElementById("move-suggestions");
   //    const moveOption = [...datalist.options].find((opt) => opt.value.toLowerCase() === moveName);
-//
+  //
   //    if (moveOption) {
   //      const moveType = moveOption.dataset.type;
   //      const typeData = typeEffectivenessData[moveType];
-//
+  //
   //      if (typeData) {
   //        typeData.strong.forEach((strongType) => {
   //          moveEffectiveness[strongType] = (moveEffectiveness[strongType] || 0) + 1;
@@ -485,19 +488,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   //      }
   //    }
   //  });
-//
+  //
   //  displayMoveEffectiveness(moveEffectiveness);
   //}
-//
+  //
   //function displayWeaknesses(weaknesses) {
   //  const weaknessDiv = document.getElementById("weaknesses");
   //  if (!weaknessDiv) {
   //    console.error('Element with id "weaknesses" not found.');
   //    return; // Exit if the element doesn't exist
   //  }
-//
+  //
   //  weaknessDiv.innerHTML = "<h3>Team Weaknesses</h3>";
-//
+  //
   //  Object.entries(weaknesses).forEach(([type, count]) => {
   //    const span = document.createElement("span");
   //    span.classList.add("type-pill", `type-${type}`);
@@ -505,17 +508,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   //    weaknessDiv.appendChild(span);
   //  });
   //}
-//
-//
+  //
+  //
   //function displayMoveEffectiveness(moveEffectiveness) {
   //  const effectivenessDiv = document.getElementById("effectiveness");
   //  if (!effectivenessDiv) {
   //    console.error("Element with ID 'effectiveness' not found.");
   //    return; // Exit the function if the element is missing
   //  }
-//
+  //
   //  effectivenessDiv.innerHTML = "<h3>Super Effective Moves Against</h3>";
-//
+  //
   //  Object.entries(moveEffectiveness).forEach(([type, count]) => {
   //    const span = document.createElement("span");
   //    span.classList.add("type-pill", `type-${type}`);
@@ -523,5 +526,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   //    effectivenessDiv.appendChild(span);
   //  });
   //}
-
 });
