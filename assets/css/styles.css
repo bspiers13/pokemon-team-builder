@@ -64,33 +64,34 @@ body::after {
   /*transition: all 0.5s ease;*/
   overflow: hidden;
   
-  max-height: 226px;
+  max-height: 234px;
 }
 
 #header.expanded {
   max-height: 100%;
 }
 
-
 /* Slot container */
-#slotContainer {
+#headerContent {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
   gap: 10px;
 }
 
-/* More Details container */
+ /*
+ More Details container 
 #moreDetails {
   max-width: 0;
   width: 100%;
   text-align: center;
 }
+*/
 
 /* More Details Button */
 #detailsBtn {
   padding: 3px 6px;
-  background-color: #444;
+  background-color: #232627;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -286,7 +287,7 @@ label {
 .type-fairy { background-color: #EE99AC; }
 
 
-#slotContainer > div {
+#headerContent > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -302,8 +303,9 @@ label {
   font-size: 0.8em;
   border: 1px solid #666;
   border-radius: 4px;
-  background-color: #444;
+  background-color: #323537;
   color: white;
+  text-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
 
 .move-input::placeholder {
@@ -311,11 +313,11 @@ label {
 }
 
 .moves-container {
-  width: 136px;
+  width: 135px;
   display: none;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5px;
+  gap: 1px;
   padding: 5px 0;
 }
 
@@ -330,10 +332,34 @@ datalist {
 }
 
 input::-webkit-calendar-picker-indicator {
-  display: none; /* Hide arrow in Chrome */
+  display: none; 
 }
 
-/* Media query for screens 1080px wide or less */
+
+:root {
+  --type-normal: #A8A878;
+  --type-fire: #F08030;
+  --type-water: #6890F0;
+  --type-electric: #F8D030;
+  --type-grass: #78C850;
+  --type-ice: #98D8D8;
+  --type-fighting: #C03028;
+  --type-poison: #A040A0;
+  --type-ground: #E0C068;
+  --type-flying: #A890F0;
+  --type-psychic: #F85888;
+  --type-bug: #A8B820;
+  --type-rock: #B8A038;
+  --type-ghost: #705898;
+  --type-dragon: #7038F8;
+  --type-dark: #705848;
+  --type-steel: #B8B8D0;
+  --type-fairy: #EE99AC;
+}
+
+
+/*
+
 @media screen and (max-width: 1920px) {
   body {
     margin-top: 150px;
@@ -392,7 +418,6 @@ input::-webkit-calendar-picker-indicator {
   }
 }
 
-/* Media query for screens 600px wide or less */
 @media only screen and (max-width: 600px) {
   body {
     margin-top: 17vw;
@@ -410,7 +435,7 @@ input::-webkit-calendar-picker-indicator {
   }
   
   .types {
-    min-width: 12vw; /* Match mobile slot width */
+    min-width: 12vw;  Match mobile slot width 
   }
 
   .pokedexContainer {
@@ -449,4 +474,4 @@ input::-webkit-calendar-picker-indicator {
   body::after {
     right: -40%;
   }
-}
+}*/

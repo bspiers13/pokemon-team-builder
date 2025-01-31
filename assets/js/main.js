@@ -14,28 +14,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   const header = document.getElementById("header");
   const moreDetails = document.getElementById("moreDetails");
 
-
-
   const pokedexData = await loadJson(
     "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
   );
   const pokemonData = await loadJson(
     "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokemon_species_data.json"
   );
-  const moveData = await loadJson(
-    "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokemon_moves.json"
-  );
-  
+  const moveData = await loadJson("assets/json/pokemon_moves.json");
+  const typeEffectivenessData = await loadJson("assets/json/type_interactions.json");
+
   console.log("Cyndaquil's move data:", moveData[154]);
-  
+
   //More details button
   detailsBtn.addEventListener("click", () => {
     header.classList.toggle("expanded");
     detailsBtn.classList.toggle("expanded");
-    
-    detailsBtn.textContent = header.classList.contains("expanded") 
-      ? "Less Details" 
-      : "More Details";
+
+    detailsBtn.textContent = header.classList.contains("expanded") ? "Less Details" : "More Details";
   });
 
   const generationDexes = [
@@ -99,6 +94,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     displayedIds = [];
     party = [];
     updateSlots();
+
+    // Clear all move inputs and reset their colors
+    document.querySelectorAll(".move-input").forEach((input) => {
+      input.value = ""; // Clear move name
+      updateMoveInputColor(input); // Reset background color
+    });
   }
 
   //Get Json data - used for pokedex data and pokemon species data
@@ -137,7 +138,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     heading.classList.add("pokedexHeading");
     heading.textContent = title;
     resultDiv.appendChild(heading);
-    
+
     //Create accordion arrow for heading
     const accordionArrow = document.createElement("div");
     accordionArrow.classList.add("accordionArrow");
@@ -157,7 +158,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         setTimeout(() => {
           container.classList.toggle("collapsed");
         }, 100);
-      //If container is not collapsed, collapse in this order to allow the sprites animation to complete before heading is rounded
+        //If container is not collapsed, collapse in this order to allow the sprites animation to complete before heading is rounded
       } else {
         container.classList.toggle("collapsed");
         accordionArrow.classList.toggle("collapsed");
@@ -171,9 +172,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     //Set to collapsed on load and then open then up, doing the animation
     container.classList.toggle("collapsed");
-    //Set in this 
+    //Set in this
     setTimeout(() => {
-       container.classList.toggle("collapsed");
+      container.classList.toggle("collapsed");
     }, 1);
 
     return container;
@@ -222,12 +223,50 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  //Clear party slot
+  //Clear party slot, shift movesets down, and update move colors
   function clearSlot(slot) {
     const index = slots.indexOf(slot);
     if (index > -1) {
-      party.splice(index, 1);
+      party.splice(index, 1); // Remove Pokémon from party
+
+      const moveContainers = document.querySelectorAll(".moves-container");
+
+      // Shift movesets down
+      for (let i = index; i < party.length; i++) {
+        const currentMoves = moveContainers[i + 1].querySelectorAll(".move-input");
+        const targetMoves = moveContainers[i].querySelectorAll(".move-input");
+
+        currentMoves.forEach((moveInput, j) => {
+          targetMoves[j].value = moveInput.value; // Move move data down
+          updateMoveInputColor(targetMoves[j]); // Update move background color
+        });
+      }
+
+      // Clear last slot's moves
+      const lastMoves = moveContainers[party.length]?.querySelectorAll(".move-input");
+      if (lastMoves) {
+        lastMoves.forEach((moveInput) => {
+          moveInput.value = "";
+          updateMoveInputColor(moveInput); // Reset background color
+        });
+      }
+
       updateSlots();
+    }
+  }
+
+  //Function to update move input background color based on move type
+  function updateMoveInputColor(input) {
+    const value = input.value.trim().toLowerCase();
+    const datalist = document.getElementById("move-suggestions");
+
+    // Find matching option
+    const option = [...datalist.options].find((opt) => opt.value.toLowerCase() === value);
+
+    if (option) {
+      input.style.backgroundColor = `var(--type-${option.dataset.type})`;
+    } else {
+      input.style.backgroundColor = "#323537"; // Reset to default color
     }
   }
 
@@ -236,8 +275,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("Party: ", party);
     slots.forEach((slot, index) => {
       const pokemonId = party[index];
-      const slotContainer = slot.parentElement;
-      const typesDiv = slotContainer.querySelector('.types');
+      const headerContent = slot.parentElement;
+      const typesDiv = headerContent.querySelector(".types");
 
       if (pokemonId === undefined) {
         if (slot.classList.contains("slot--full")) {
@@ -247,7 +286,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
         typesDiv.innerHTML = ""; // Reset to default state
       } else {
-        if (parseInt(slot.id) !== pokemonId) {          
+        if (parseInt(slot.id) !== pokemonId) {
           slot.classList.add("slot--full");
           slot.id = pokemonId;
 
@@ -261,12 +300,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           // Update types display
           const pokemon = pokemonData[Object.keys(pokemonData)[pokemonId - 1]];
-          typesDiv.innerHTML = pokemon.types.map(type => 
-            `<span class="type-pill type-${type}">${type}</span>`
-          ).join('');
+          typesDiv.innerHTML = pokemon.types
+            .map((type) => `<span class="type-pill type-${type}">${type}</span>`)
+            .join("");
         }
       }
     });
+    
+    //calculateWeaknesses();
+    //calculateMoveEffectiveness();
   }
 
   //Get specific sprite for a pokemon depending on which generation sprite to get
@@ -317,83 +359,169 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     return "mf";
   }
-  
+
   function formatLearnMethod(method) {
     const methods = {
-      "egg": "Egg",
-      "machine": "TM/HM",
-      "tutor": "Tutor",
+      egg: "Egg",
+      machine: "TM/HM",
+      tutor: "Tutor",
       "level-up": "Level",
       "stadium-surf": "Stadium",
       "light-ball-egg": "Pikachu Egg"
     };
     return methods[method] || method;
   }
-  
-  // Update the getMovesForPokemon function
+
+  const generationToGames = {
+    1: ["red-blue", "yellow"],
+    2: ["gold-silver", "crystal"],
+    3: ["ruby-sapphire", "emerald", "firered-leafgreen", "colosseum"],
+    4: ["diamond-pearl", "platinum", "heartgold-soulsilver", "xd"],
+    5: ["black-white", "black-2-white-2"],
+    6: ["x-y", "omega-ruby-alpha-sapphire"],
+    7: ["sun-moon", "ultra-sun-ultra-moon", "lets-go-pikachu-lets-go-eevee"],
+    8: ["sword-shield", "brilliant-diamond-and-shining-pearl"],
+    9: ["scarlet-violet"]
+  };
+
+  //Update the getMovesForPokemon function
   function updateMoveSuggestions(pokemonId) {
     const datalist = document.getElementById("move-suggestions");
     datalist.innerHTML = ""; // Clear previous options
 
-    if (!pokemonId) return;
+    if (!pokemonId || !generation) return;
 
+    const games = generationToGames[generation];
     const pokemonName = Object.keys(pokemonData)[pokemonId - 1].toLowerCase();
-    const moves = moveData[pokemonName] 
-      ? Object.values(moveData[pokemonName]).flat()
-      : [];
 
-    // Add unique moves to datalist
-    moves.filter((v,i,a) => a.findIndex(t => t.move === v.move) === i)
-      .forEach(move => {
-        const option = document.createElement("option");
-        option.value = move.move.replace(/-/g, " ");
-        option.title = formatLearnMethod(move.learn_method); // Show method on hover
-        datalist.appendChild(option);
-      });
+    // Get moves from all games in the current generation
+    const moves = games.flatMap((game) => {
+      // Get moves for this specific game
+      return moveData[pokemonName]?.[game] || [];
+    });
+
+    // Filter unique moves (keeping last occurrence)
+    const uniqueMoves = moves.reduce((acc, move) => {
+      acc[move.move] = move; // Overwrite with last occurrence
+      return acc;
+    }, {});
+
+    // Add moves to datalist
+    Object.values(uniqueMoves).forEach((move) => {
+      const option = document.createElement("option");
+      option.value = move.move.replace(/-/g, " ");
+      option.dataset.type = move.type;
+      option.dataset.learnMethod = move.learn_method;
+      option.dataset.power = move.power;
+      option.dataset.pp = move.pp;
+      option.title = `${formatLearnMethod(move.learn_method)} | Power: ${move.power} | PP: ${move.pp}`; // Fixed template literal
+      datalist.appendChild(option);
+    });
   }
 
-  // Update the autocomplete event listeners
-  document.querySelectorAll('.move-input').forEach(input => {
-    input.addEventListener('focus', () => {
-      const slot = input.closest('.moves-container')
-        .previousElementSibling
-        .previousElementSibling;
+  //Update the autocomplete event listeners
+  document.querySelectorAll(".move-input").forEach((input) => {
+    input.addEventListener("focus", () => {
+      const slot = input.closest(".moves-container").previousElementSibling.previousElementSibling;
       const pokemonId = parseInt(slot.id);
       updateMoveSuggestions(pokemonId);
     });
   });
 
-  //// Update the showSuggestions function to use ID-based data
-  //function showSuggestions(input, moves, query) {
-  //  console.log("Input value:", query); // Debug 4
-  //  console.log("All matching moves:", moves); // Debug 5
-  //  const existing = input.parentNode.querySelector('.suggestions');
-  //  if (existing) existing.remove();
+  //Check user has typed in valid move; turn background colour to move type colour
+  document.querySelectorAll(".move-input").forEach((input) => {
+    input.addEventListener("input", (e) => {
+      const value = e.target.value.trim().toLowerCase();
+      const datalist = document.getElementById("move-suggestions");
+
+      // Find matching option
+      const option = [...datalist.options].find((opt) => opt.value.toLowerCase() === value);
+
+      if (option) {
+        // Set background color from type
+        e.target.style.backgroundColor = `var(--type-${option.dataset.type})`;
+      } else {
+        // Reset to default color
+        e.target.style.backgroundColor = "#323537";
+      }
+      input.addEventListener("input", calculateMoveEffectiveness);
+    });
+  });
+
+  //function calculateWeaknesses() {
+  //  const weaknesses = {};
 //
-  //  const matches = moves.filter(m => 
-  //    m.move.replace(/-/g, ' ').includes(query)
-  //  ).slice(0, 5);
+  //  party.forEach((pokemonId) => {
+  //    const pokemon = pokemonData[Object.keys(pokemonData)[pokemonId - 1]];
+  //    pokemon.types.forEach((type) => {
+  //      const typeData = typeEffectivenessData[type];
+  //      if (!typeData) return;
 //
-  //  if (matches.length > 0) {
-  //    const dropdown = document.createElement('div');
-  //    dropdown.className = 'suggestions';
-//
-  //    matches.forEach(move => {
-  //      const div = document.createElement('div');
-  //      div.innerHTML = `
-  //        <span>${move.move.replace(/-/g, ' ')}</span>
-  //        <span class="learn-method ${move.learn_method}">
-  //          ${formatLearnMethod(move.learn_method)}
-  //        </span>
-  //      `;
-  //      div.addEventListener('click', () => {
-  //        input.value = move.move.replace(/-/g, ' ');
-  //        dropdown.remove();
+  //      typeData.weak.forEach((weakType) => {
+  //        weaknesses[weakType] = (weaknesses[weakType] || 0) + 1;
   //      });
-  //      dropdown.appendChild(div);
   //    });
+  //  });
 //
-  //    input.parentNode.appendChild(dropdown);
-  //  }
+  //  displayWeaknesses(weaknesses);
   //}
+//
+  //function calculateMoveEffectiveness() {
+  //  const moveEffectiveness = {};
+//
+  //  document.querySelectorAll(".move-input").forEach((input) => {
+  //    const moveName = input.value.trim().toLowerCase();
+  //    const datalist = document.getElementById("move-suggestions");
+  //    const moveOption = [...datalist.options].find((opt) => opt.value.toLowerCase() === moveName);
+//
+  //    if (moveOption) {
+  //      const moveType = moveOption.dataset.type;
+  //      const typeData = typeEffectivenessData[moveType];
+//
+  //      if (typeData) {
+  //        typeData.strong.forEach((strongType) => {
+  //          moveEffectiveness[strongType] = (moveEffectiveness[strongType] || 0) + 1;
+  //        });
+  //      }
+  //    }
+  //  });
+//
+  //  displayMoveEffectiveness(moveEffectiveness);
+  //}
+//
+  //function displayWeaknesses(weaknesses) {
+  //  const weaknessDiv = document.getElementById("weaknesses");
+  //  if (!weaknessDiv) {
+  //    console.error('Element with id "weaknesses" not found.');
+  //    return; // Exit if the element doesn't exist
+  //  }
+//
+  //  weaknessDiv.innerHTML = "<h3>Team Weaknesses</h3>";
+//
+  //  Object.entries(weaknesses).forEach(([type, count]) => {
+  //    const span = document.createElement("span");
+  //    span.classList.add("type-pill", `type-${type}`);
+  //    span.textContent = `${type} (${count})`;
+  //    weaknessDiv.appendChild(span);
+  //  });
+  //}
+//
+//
+  //function displayMoveEffectiveness(moveEffectiveness) {
+  //  const effectivenessDiv = document.getElementById("effectiveness");
+  //  if (!effectivenessDiv) {
+  //    console.error("Element with ID 'effectiveness' not found.");
+  //    return; // Exit the function if the element is missing
+  //  }
+//
+  //  effectivenessDiv.innerHTML = "<h3>Super Effective Moves Against</h3>";
+//
+  //  Object.entries(moveEffectiveness).forEach(([type, count]) => {
+  //    const span = document.createElement("span");
+  //    span.classList.add("type-pill", `type-${type}`);
+  //    span.textContent = `${type} (${count})`;
+  //    effectivenessDiv.appendChild(span);
+  //  });
+  //}
+
 });
