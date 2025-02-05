@@ -2,6 +2,34 @@ let generation = null; // Define generation as a global variable
 let displayedIds = [];
 let party = [];
 
+//Gen 1-5 Pokémon that gained Fairy type later
+const historicalTypes = {
+  35: { beforeGen: 6, types: ["Normal"] },   // Clefairy
+  36: { beforeGen: 6, types: ["Normal"] },   // Clefable
+  39: { beforeGen: 6, types: ["Normal"] },   // Jigglypuff
+  40: { beforeGen: 6, types: ["Normal"] },   // Wigglytuff
+  122: { beforeGen: 6, types: ["Psychic"] }, // Mr. Mime
+  173: { beforeGen: 6, types: ["Normal"] },  // Cleffa
+  174: { beforeGen: 6, types: ["Normal"] },  // Igglybuff
+  209: { beforeGen: 6, types: ["Normal"] },  // Snubbull
+  210: { beforeGen: 6, types: ["Normal"] },  // Granbull
+  280: { beforeGen: 6, types: ["Psychic"] }, // Ralts
+  281: { beforeGen: 6, types: ["Psychic"] }, // Kirlia
+  282: { beforeGen: 6, types: ["Psychic"] }, // Gardevoir
+  303: { beforeGen: 6, types: ["Steel"] },   // Mawile
+  307: { beforeGen: 6, types: ["Fighting"] }, // Meditite
+  308: { beforeGen: 6, types: ["Fighting"] }, // Medicham
+  311: { beforeGen: 6, types: ["Electric"] }, // Plusle
+  312: { beforeGen: 6, types: ["Electric"] }, // Minun
+  439: { beforeGen: 6, types: ["Psychic"] },  // Mime Jr.
+  517: { beforeGen: 6, types: ["Psychic"] },  // Munna
+  518: { beforeGen: 6, types: ["Psychic"] },  // Musharna
+  548: { beforeGen: 6, types: ["Grass"] },    // Petilil
+  549: { beforeGen: 6, types: ["Grass"] },    // Lilligant
+  561: { beforeGen: 6, types: ["Psychic"] },  // Sigilyph
+  648: { beforeGen: 6, types: ["Normal"] },   // Meloetta
+};
+
 const pathBase = "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -269,7 +297,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (option) {
       input.style.backgroundColor = `var(--type-${option.dataset.type})`;
     } else {
-      input.style.backgroundColor = "#323537"; // Reset to default color
+      input.style.backgroundColor = "#323537"; //Reset to default color
     }
   }
 
@@ -390,41 +418,43 @@ document.addEventListener("DOMContentLoaded", async () => {
   //Update the getMovesForPokemon function
   function updateMoveSuggestions(pokemonId) {
     const datalist = document.getElementById("move-suggestions");
-    datalist.innerHTML = ""; // Clear previous options
+      datalist.innerHTML = ""; // Clear previous options
 
-    if (!pokemonId || !generation) return;
+      if (!pokemonId || !generation) return;
 
-    const games = generationToGames[generation];
-    const pokemonName = Object.keys(pokemonData)[pokemonId - 1].toLowerCase();
+      const games = generationToGames[generation];
+      const pokemonName = Object.keys(pokemonData)[pokemonId - 1].toLowerCase();
 
-    // Get moves from all games in the current generation
-    const moves = games.flatMap((game) => {
-      // Get moves for this specific game
-      return moveData[pokemonName]?.[game] || [];
-    });
+      // Get moves from all games in the current generation
+      const moves = games.flatMap((game) => {
+        // Get moves for this specific game
+        return moveData[pokemonName]?.[game] || [];
+      });
 
-    // Filter unique moves (keeping last occurrence)
-    const uniqueMoves = moves.reduce((acc, move) => {
-      acc[move.move] = move; // Overwrite with last occurrence
-      return acc;
-    }, {});
+      // Filter unique moves (keeping last occurrence)
+      const uniqueMoves = moves.reduce((acc, move) => {
+        acc[move.move] = move; // Overwrite with last occurrence
+        return acc;
+      }, {});
 
-    // Add moves to datalist
-    Object.values(uniqueMoves).forEach((move) => {
-      const option = document.createElement("option");
-      option.value = move.move.replace(/-/g, " ");
-      option.dataset.type = move.type;
-      option.dataset.learnMethod = move.learn_method;
-      //option.dataset.power = move.power;
-      //option.dataset.pp = move.pp;
-      //option.title = `${formatLearnMethod(move.learn_method)} | Power: ${move.power} | PP: ${move.pp}`;
-      datalist.appendChild(option);
-    });
+      // Add moves to datalist
+      Object.values(uniqueMoves).forEach((move) => {
+        const option = document.createElement("option");
+        option.value = move.move.replace(/-/g, " ");
+        option.dataset.type = move.type;
+        option.dataset.learnMethod = move.learn_method;
+        //option.dataset.power = move.power;
+        //option.dataset.pp = move.pp;
+        //option.title = `${formatLearnMethod(move.learn_method)} | Power: ${move.power} | PP: ${move.pp}`;
+        datalist.appendChild(option);
+      });
+    
+    
   }
 
   //Update the autocomplete event listeners
   document.querySelectorAll(".move-input").forEach((input) => {
-    input.addEventListener("focus", () => {
+    input.addEventListener("focusin", () => {
       const slot = input.closest(".moves-container").previousElementSibling.previousElementSibling;
       const pokemonId = parseInt(slot.id);
       updateMoveSuggestions(pokemonId);
