@@ -2,32 +2,26 @@ let generation = null; // Define generation as a global variable
 let displayedIds = [];
 let party = [];
 
-//Gen 1-5 Pokémon that gained Fairy type later
+// Gen 1–5 Pokémon that later gained the Fairy type
 const historicalTypes = {
-  35: { beforeGen: 6, types: ["Normal"] },   // Clefairy
-  36: { beforeGen: 6, types: ["Normal"] },   // Clefable
-  39: { beforeGen: 6, types: ["Normal"] },   // Jigglypuff
-  40: { beforeGen: 6, types: ["Normal"] },   // Wigglytuff
-  122: { beforeGen: 6, types: ["Psychic"] }, // Mr. Mime
-  173: { beforeGen: 6, types: ["Normal"] },  // Cleffa
-  174: { beforeGen: 6, types: ["Normal"] },  // Igglybuff
-  209: { beforeGen: 6, types: ["Normal"] },  // Snubbull
-  210: { beforeGen: 6, types: ["Normal"] },  // Granbull
-  280: { beforeGen: 6, types: ["Psychic"] }, // Ralts
-  281: { beforeGen: 6, types: ["Psychic"] }, // Kirlia
-  282: { beforeGen: 6, types: ["Psychic"] }, // Gardevoir
-  303: { beforeGen: 6, types: ["Steel"] },   // Mawile
-  307: { beforeGen: 6, types: ["Fighting"] }, // Meditite
-  308: { beforeGen: 6, types: ["Fighting"] }, // Medicham
-  311: { beforeGen: 6, types: ["Electric"] }, // Plusle
-  312: { beforeGen: 6, types: ["Electric"] }, // Minun
-  439: { beforeGen: 6, types: ["Psychic"] },  // Mime Jr.
-  517: { beforeGen: 6, types: ["Psychic"] },  // Munna
-  518: { beforeGen: 6, types: ["Psychic"] },  // Musharna
-  548: { beforeGen: 6, types: ["Grass"] },    // Petilil
-  549: { beforeGen: 6, types: ["Grass"] },    // Lilligant
-  561: { beforeGen: 6, types: ["Psychic"] },  // Sigilyph
-  648: { beforeGen: 6, types: ["Normal"] },   // Meloetta
+  35:  { beforeGen: 6, types: ["normal"] },             // Clefairy
+  36:  { beforeGen: 6, types: ["normal"] },             // Clefable
+  39:  { beforeGen: 6, types: ["normal"] },             // Jigglypuff
+  40:  { beforeGen: 6, types: ["normal"] },             // Wigglytuff
+  122: { beforeGen: 6, types: ["psychic"] },            // Mr. Mime
+  173: { beforeGen: 6, types: ["normal"] },             // Cleffa
+  174: { beforeGen: 6, types: ["normal"] },             // Igglybuff
+  175: { beforeGen: 6, types: ["normal"] },             // Togepi
+  176: { beforeGen: 6, types: ["normal", "flying"] },   // Togetic
+  183: { beforeGen: 6, types: ["water"] },              // Marill
+  184: { beforeGen: 6, types: ["water"] },              // Azumarill
+  209: { beforeGen: 6, types: ["normal"] },             // Snubbull
+  210: { beforeGen: 6, types: ["normal"] },             // Granbull
+  280: { beforeGen: 6, types: ["psychic"] },            // Ralts
+  281: { beforeGen: 6, types: ["psychic"] },            // Kirlia
+  282: { beforeGen: 6, types: ["psychic"] },            // Gardevoir
+  303: { beforeGen: 6, types: ["steel"] },              // Mawile
+  439: { beforeGen: 6, types: ["psychic"] },            // Mime Jr.
 };
 
 const pathBase = "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/";
@@ -301,7 +295,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  //Update party slots whenever there is a change to the party
   function updateSlots() {
     console.log("Party: ", party);
     slots.forEach((slot, index) => {
@@ -315,7 +308,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           slot.innerHTML = "";
           slot.id = "";
         }
-        typesDiv.innerHTML = ""; //Reset to default state
+        typesDiv.innerHTML = ""; // Reset to default state
       } else {
         if (parseInt(slot.id) !== pokemonId) {
           slot.classList.add("slot--full");
@@ -329,9 +322,16 @@ document.addEventListener("DOMContentLoaded", async () => {
           slot.innerHTML = "";
           slot.appendChild(spriteImg);
 
-          //Update types display
+          // Update types display with historical check
           const pokemon = pokemonData[Object.keys(pokemonData)[pokemonId - 1]];
-          typesDiv.innerHTML = pokemon.types
+          let displayTypes = [...pokemon.types];
+
+          // Check for historical type adjustments
+          if (generation < 6 && historicalTypes[pokemonId]) {
+            displayTypes = historicalTypes[pokemonId].types;
+          }
+
+          typesDiv.innerHTML = displayTypes
             .map((type) => `<span class="type-pill type-${type}">${type}</span>`)
             .join("");
         }
@@ -415,42 +415,59 @@ document.addEventListener("DOMContentLoaded", async () => {
     9: ["scarlet-violet"]
   };
 
-  //Update the getMovesForPokemon function
+  // Update the getMovesForPokemon function
   function updateMoveSuggestions(pokemonId) {
     const datalist = document.getElementById("move-suggestions");
-      datalist.innerHTML = ""; // Clear previous options
+    datalist.innerHTML = ""; // Clear previous options
 
-      if (!pokemonId || !generation) return;
+    if (!pokemonId || !generation) return;
 
-      const games = generationToGames[generation];
-      const pokemonName = Object.keys(pokemonData)[pokemonId - 1].toLowerCase();
+    const games = generationToGames[generation];
+    const pokemonName = Object.keys(pokemonData)[pokemonId - 1].toLowerCase();
 
-      // Get moves from all games in the current generation
-      const moves = games.flatMap((game) => {
-        // Get moves for this specific game
-        return moveData[pokemonName]?.[game] || [];
-      });
+    // Get moves from all games in the current generation
+    const moves = games.flatMap((game) => {
+      return moveData[pokemonName]?.[game] || [];
+    });
 
-      // Filter unique moves (keeping last occurrence)
-      const uniqueMoves = moves.reduce((acc, move) => {
-        acc[move.move] = move; // Overwrite with last occurrence
-        return acc;
-      }, {});
+    // Historical type adjustments for moves
+    const historicalMoveTypes = {
+      "charm": { beforeGen: 6, type: "normal" },
+      "moonlight": { beforeGen: 6, type: "normal" },
+      "sweet-kiss": { beforeGen: 6, type: "normal" },
+    };
 
-      // Add moves to datalist
-      Object.values(uniqueMoves).forEach((move) => {
-        const option = document.createElement("option");
-        option.value = move.move.replace(/-/g, " ");
-        option.dataset.type = move.type;
-        option.dataset.learnMethod = move.learn_method;
-        //option.dataset.power = move.power;
-        //option.dataset.pp = move.pp;
-        //option.title = `${formatLearnMethod(move.learn_method)} | Power: ${move.power} | PP: ${move.pp}`;
-        datalist.appendChild(option);
-      });
-    
-    
-  }
+    // Filter and adjust moves
+    const filteredMoves = moves.filter(move => {
+      // Remove Fairy-type moves for generations before 6
+      if (generation < 6 && move.type === "Fairy") return false;
+      return true;
+    }).map(move => {
+      // Adjust types for moves that changed in later generations
+      if (generation < 6 && historicalMoveTypes[move.move]) {
+        return {
+          ...move,
+          type: historicalMoveTypes[move.move].type
+        };
+      }
+      return move;
+    });
+
+  // Filter unique moves (keeping last occurrence)
+  const uniqueMoves = filteredMoves.reduce((acc, move) => {
+    acc[move.move] = move; // Overwrite with last occurrence
+    return acc;
+  }, {});
+
+  // Add moves to datalist
+  Object.values(uniqueMoves).forEach((move) => {
+    const option = document.createElement("option");
+    option.value = move.move.replace(/-/g, " ");
+    option.dataset.type = move.type;
+    option.dataset.learnMethod = move.learn_method;
+    datalist.appendChild(option);
+  });
+}
 
   //Update the autocomplete event listeners
   document.querySelectorAll(".move-input").forEach((input) => {
