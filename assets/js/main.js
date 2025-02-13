@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const detailsBtn = document.getElementById("detailsBtn");
   const header = document.getElementById("header");
   const moreDetails = document.getElementById("moreDetails");
+  const effectivenessDiv = document.getElementById("effectiveness");
 
   const pokedexData = await loadJson(
     "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   //More details button
   detailsBtn.addEventListener("click", () => {
     header.classList.toggle("expanded");
+    effectivenessDiv.classList.toggle("expanded");
     detailsBtn.classList.toggle("expanded");
 
     detailsBtn.textContent = header.classList.contains("expanded") ? "Less Details" : "More Details";
@@ -188,7 +190,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           if (container.classList.contains("collapsed")) {
             heading.classList.toggle("collapsed");
           }
-        }, 900);
+        }, 500);
       }
     });
 
@@ -257,11 +259,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       for (let i = index; i < party.length; i++) {
         const currentMoves = moveContainers[i + 1].querySelectorAll(".move-input");
         const targetMoves = moveContainers[i].querySelectorAll(".move-input");
-        const targetPokemonId = party[i]; // Get the new Pokémon ID for this slot
+        const targetPokemonId = party[i];
 
         currentMoves.forEach((moveInput, j) => {
+          // Transfer both value and data attributes
           targetMoves[j].value = moveInput.value;
-          // Update datalist based on target Pokémon
+          targetMoves[j].dataset.type = moveInput.dataset.type;
+          targetMoves[j].dataset.learnMethod = moveInput.dataset.learnMethod;
+          targetMoves[j].dataset.power = moveInput.dataset.power;
+
           updateMoveSuggestions(targetPokemonId);
           updateMoveInputColor(targetMoves[j]);
         });
@@ -338,8 +344,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    //calculateWeaknesses();
-    //calculateMoveEffectiveness();
+    calculateMoveEffectiveness();
   }
 
   //Get specific sprite for a pokemon depending on which generation sprite to get
@@ -465,6 +470,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     option.value = move.move.replace(/-/g, " ");
     option.dataset.type = move.type;
     option.dataset.learnMethod = move.learn_method;
+    option.dataset.power = move.power;
     datalist.appendChild(option);
   });
 }
@@ -478,7 +484,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
-  //Check user has typed in valid move; turn background colour to move type colour
+  // Update the autocomplete event listeners
   document.querySelectorAll(".move-input").forEach((input) => {
     input.addEventListener("input", (e) => {
       const value = e.target.value.trim().toLowerCase();
@@ -488,89 +494,128 @@ document.addEventListener("DOMContentLoaded", async () => {
       const option = [...datalist.options].find((opt) => opt.value.toLowerCase() === value);
 
       if (option) {
+        // Store move type directly in move-input element
+        e.target.dataset.type = option.dataset.type;
+        e.target.dataset.learnMethod = option.dataset.learnMethod;
+        e.target.dataset.power = option.dataset.power;
+
         // Set background color from type
         e.target.style.backgroundColor = `var(--type-${option.dataset.type})`;
       } else {
-        // Reset to default color
+        // Reset if move is invalid
+        e.target.dataset.type = "";
+        e.target.dataset.learnMethod = "";
+        e.target.dataset.power = "";
         e.target.style.backgroundColor = "#323537";
       }
-      //input.addEventListener("input", calculateMoveEffectiveness);
+
+      calculateMoveEffectiveness();
     });
   });
 
-  //function calculateWeaknesses() {
-  //  const weaknesses = {};
-  //
-  //  party.forEach((pokemonId) => {
-  //    const pokemon = pokemonData[Object.keys(pokemonData)[pokemonId - 1]];
-  //    pokemon.types.forEach((type) => {
-  //      const typeData = typeEffectivenessData[type];
-  //      if (!typeData) return;
-  //
-  //      typeData.weak.forEach((weakType) => {
-  //        weaknesses[weakType] = (weaknesses[weakType] || 0) + 1;
-  //      });
-  //    });
-  //  });
-  //
-  //  displayWeaknesses(weaknesses);
-  //}
-  //
-  //function calculateMoveEffectiveness() {
-  //  const moveEffectiveness = {};
-  //
-  //  document.querySelectorAll(".move-input").forEach((input) => {
-  //    const moveName = input.value.trim().toLowerCase();
-  //    const datalist = document.getElementById("move-suggestions");
-  //    const moveOption = [...datalist.options].find((opt) => opt.value.toLowerCase() === moveName);
-  //
-  //    if (moveOption) {
-  //      const moveType = moveOption.dataset.type;
-  //      const typeData = typeEffectivenessData[moveType];
-  //
-  //      if (typeData) {
-  //        typeData.strong.forEach((strongType) => {
-  //          moveEffectiveness[strongType] = (moveEffectiveness[strongType] || 0) + 1;
-  //        });
-  //      }
-  //    }
-  //  });
-  //
-  //  displayMoveEffectiveness(moveEffectiveness);
-  //}
-  //
-  //function displayWeaknesses(weaknesses) {
-  //  const weaknessDiv = document.getElementById("weaknesses");
-  //  if (!weaknessDiv) {
-  //    console.error('Element with id "weaknesses" not found.');
-  //    return; // Exit if the element doesn't exist
-  //  }
-  //
-  //  weaknessDiv.innerHTML = "<h3>Team Weaknesses</h3>";
-  //
-  //  Object.entries(weaknesses).forEach(([type, count]) => {
-  //    const span = document.createElement("span");
-  //    span.classList.add("type-pill", `type-${type}`);
-  //    span.textContent = `${type} (${count})`;
-  //    weaknessDiv.appendChild(span);
-  //  });
-  //}
-  //
-  //
-  //function displayMoveEffectiveness(moveEffectiveness) {
-  //  const effectivenessDiv = document.getElementById("effectiveness");
-  //  if (!effectivenessDiv) {
-  //    console.error("Element with ID 'effectiveness' not found.");
-  //    return; // Exit the function if the element is missing
-  //  }
-  //
-  //  effectivenessDiv.innerHTML = "<h3>Super Effective Moves Against</h3>";
-  //
-  //  Object.entries(moveEffectiveness).forEach(([type, count]) => {
-  //    const span = document.createElement("span");
-  //    span.classList.add("type-pill", `type-${type}`);
-  //    span.textContent = `${type} (${count})`;
-  //    effectivenessDiv.appendChild(span);
-  //  });
-  //}
+  // Modify calculateMoveEffectiveness to use move-input's data-type
+  function calculateMoveEffectiveness() {
+    const moveEffectiveness = {};
+    console.groupCollapsed("[DEBUG] Calculating move effectiveness");
+
+    party.forEach((pokemonId, slotIndex) => {
+      const pokemonKey = Object.keys(pokemonData)[pokemonId - 1];
+      const pokemon = pokemonData[pokemonKey];
+      let displayTypes = [...pokemon.types];
+
+      if (generation < 6 && historicalTypes[pokemonId]) {
+        displayTypes = historicalTypes[pokemonId].types;
+      }
+
+      const pokemonTypes = displayTypes.map(type => type.toLowerCase());
+      console.log(`Processing Pokémon #${pokemonId} (${pokemonKey}) with types:`, pokemonTypes);
+
+      // Get the corresponding moves container using DOM traversal
+      const slot = slots[slotIndex];
+      const moveContainer = slot.nextElementSibling.nextElementSibling; // Adjusted DOM traversal
+      if (!moveContainer) {
+        console.warn(`No move container found for slot ${slotIndex}`);
+        return;
+      }
+
+      const moveInputs = moveContainer.querySelectorAll(".move-input");
+      console.log(`Found ${moveInputs.length} move inputs for slot ${slotIndex}`);
+
+      moveInputs.forEach((input, moveIndex) => {
+        const moveName = input.value.trim().toLowerCase();
+        const moveType = input.dataset.type ? input.dataset.type.toLowerCase() : "";
+        const movePower = input.dataset.power;
+
+        if (!moveName || !moveType || movePower === "null") {
+          console.log(`Slot ${slotIndex} move ${moveIndex + 1}: empty or invalid`);
+          return;
+        }
+
+        const typeData = typeEffectivenessData[moveType];
+
+        if (!typeData) {
+          console.warn(`No effectiveness data for move type: ${moveType}`);
+          return;
+        }
+
+        const isStab = pokemonTypes.includes(moveType);
+        console.log(`Move ${moveIndex + 1}: ${moveName} (${moveType}), STAB: ${isStab}`);
+
+        typeData.strong.forEach(targetType => {
+          console.log(`- Super effective against: ${targetType}`);
+          if (!moveEffectiveness[targetType]) {
+            moveEffectiveness[targetType] = { count: 0, hasStab: false };
+          }
+          moveEffectiveness[targetType].count++;
+          if (isStab) {
+            moveEffectiveness[targetType].hasStab = true;
+          }
+        });
+      });
+    });
+
+    console.log("Final effectiveness calculation:", moveEffectiveness);
+    console.groupEnd();
+    displayMoveEffectiveness(moveEffectiveness);
+  }
+
+  function displayMoveEffectiveness(moveEffectiveness) {
+    if (!effectivenessDiv) return;
+
+    // Create the container for type pills
+    const container = document.createElement("div");
+    container.classList.add("type-container");
+
+    // Iterate over each target type and its associated data
+    Object.entries(moveEffectiveness).forEach(([targetType, data]) => {
+      // Skip Fairy-type for generations before Gen 6
+      if (generation < 6 && targetType === "fairy") return;
+
+      const pill = document.createElement("span");
+      pill.classList.add("type-pill", `type-${targetType}`);
+      // Add an extra class if at least one move for this target type was STAB
+      if (data.hasStab) {
+        pill.classList.add("stab-effective");
+      }
+      pill.textContent = `${targetType} (${data.count})`;
+      container.appendChild(pill);
+    });
+
+    // Clear previous content from effectivenessDiv
+    effectivenessDiv.innerHTML = "";
+
+    // Only add the heading and container if there are any types to display
+    if (container.childElementCount > 0) {
+      const heading = document.createElement("h3");
+      heading.textContent = "Super Effective Move Coverage";
+      effectivenessDiv.appendChild(heading);
+      effectivenessDiv.appendChild(container);
+      // Optionally, make sure the container is visible:
+      effectivenessDiv.style.display = "block";
+    } else {
+      // Hide the effectivenessDiv when there are no types to show
+      effectivenessDiv.style.display = "none";
+    }
+  }
+
 });
