@@ -453,6 +453,75 @@ input::-webkit-calendar-picker-indicator {
   outline-offset: -1px;
 }
 
+#weaknesses {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.2s ease,
+    opacity 0.1s ease,
+    padding 0.2s ease;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#weaknesses.expanded {
+  max-height: 500px;
+  opacity: 1;
+  padding: 10px 0 20px 0;
+  border-radius: 8px;
+}
+
+#weaknesses h3 {
+  margin: 0 0 10px 0;
+  color: #ffffff;
+}
+
+/* 4x weakness indicator */
+#weaknesses .super-effective {
+  position: relative;
+  box-shadow: 0 0 0 2px #ff0000;
+  outline: 1px solid rgb(129, 129, 129);
+  outline-offset: -1px;
+  outline-offset: -1px;
+}
+
+#weaknesses .type-pill {
+  position: relative;
+  transition: transform 0.1s ease;
+}
+
+
+#weaknesses {
+  display: none;
+}
+
+/*
+#header.expanded #weaknesses {
+  display: block;
+}
+*/
+
+.type-pill.greyed-out {
+  opacity: 0.4;
+  filter: grayscale(85%);
+  position: relative;
+}
+
+#moreDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 900px;
+}
+
 /*
 @media screen and (max-width: 1920px) {
   body {

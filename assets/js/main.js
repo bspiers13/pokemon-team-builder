@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const header = document.getElementById("header");
   const moreDetails = document.getElementById("moreDetails");
   const effectivenessDiv = document.getElementById("effectiveness");
+  const weaknessesDiv = document.getElementById("weaknesses");
 
   const pokedexData = await loadJson(
     "https://raw.githubusercontent.com/bspiers13/pokemon-team-builder/refs/heads/main/assets/json/pokedex_data.json"
@@ -52,9 +53,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   detailsBtn.addEventListener("click", () => {
     header.classList.toggle("expanded");
     effectivenessDiv.classList.toggle("expanded");
+    weaknessesDiv.classList.toggle("expanded"); // Add this line
     detailsBtn.classList.toggle("expanded");
 
-    detailsBtn.textContent = header.classList.contains("expanded") ? "Less Details" : "More Details";
+    detailsBtn.textContent = header.classList.contains("expanded")
+      ? "Less Details"
+      : "More Details";
+
+    // Add these to ensure weaknesses are calculated when expanding
+    calculateMoveEffectiveness();
+    calculateWeaknesses();
   });
 
   const generationDexes = [
@@ -345,6 +353,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     calculateMoveEffectiveness();
+    calculateWeaknesses();
   }
 
   //Get specific sprite for a pokemon depending on which generation sprite to get
@@ -458,31 +467,45 @@ document.addEventListener("DOMContentLoaded", async () => {
       return move;
     });
 
-  // Filter unique moves (keeping last occurrence)
-  const uniqueMoves = filteredMoves.reduce((acc, move) => {
-    acc[move.move] = move; // Overwrite with last occurrence
-    return acc;
-  }, {});
+    // Filter unique moves (keeping last occurrence)
+    const uniqueMoves = filteredMoves.reduce((acc, move) => {
+      acc[move.move] = move; // Overwrite with last occurrence
+      return acc;
+    }, {});
 
-  // Add moves to datalist
-  Object.values(uniqueMoves).forEach((move) => {
-    const option = document.createElement("option");
-    option.value = move.move.replace(/-/g, " ");
-    option.dataset.type = move.type;
-    option.dataset.learnMethod = move.learn_method;
-    option.dataset.power = move.power;
-    datalist.appendChild(option);
-  });
-}
+    // Add moves to datalist
+    Object.values(uniqueMoves).forEach((move) => {
+      const option = document.createElement("option");
+      option.value = move.move.replace(/-/g, " ");
+      option.dataset.type = move.type;
+      option.dataset.learnMethod = move.learn_method;
+      option.dataset.power = move.power;
+      datalist.appendChild(option);
+    });
+  }
 
-  //Update the autocomplete event listeners
   document.querySelectorAll(".move-input").forEach((input) => {
-    input.addEventListener("focusin", () => {
-      const slot = input.closest(".moves-container").previousElementSibling.previousElementSibling;
+    input.addEventListener("focusin", function () {
+      const slot = this.closest(".moves-container").previousElementSibling.previousElementSibling;
       const pokemonId = parseInt(slot.id);
-      updateMoveSuggestions(pokemonId);
+
+      // Get the datalist element
+      const datalist = document.getElementById("move-suggestions");
+
+      // Clear old options
+      datalist.innerHTML = "";
+
+      // Update move suggestions
+      const moves = getMoveSuggestions(pokemonId); // Assuming this function returns an array of moves
+      moves.forEach((move) => {
+        const option = document.createElement("option");
+        option.value = move;
+        datalist.appendChild(option);
+      });
+
     });
   });
+
 
   // Update the autocomplete event listeners
   document.querySelectorAll(".move-input").forEach((input) => {
@@ -513,7 +536,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
-  // Modify calculateMoveEffectiveness to use move-input's data-type
   function calculateMoveEffectiveness() {
     const moveEffectiveness = {};
     console.groupCollapsed("[DEBUG] Calculating move effectiveness");
@@ -530,9 +552,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       const pokemonTypes = displayTypes.map(type => type.toLowerCase());
       console.log(`Processing Pokémon #${pokemonId} (${pokemonKey}) with types:`, pokemonTypes);
 
-      // Get the corresponding moves container using DOM traversal
       const slot = slots[slotIndex];
-      const moveContainer = slot.nextElementSibling.nextElementSibling; // Adjusted DOM traversal
+      const moveContainer = slot.nextElementSibling.nextElementSibling;
       if (!moveContainer) {
         console.warn(`No move container found for slot ${slotIndex}`);
         return;
@@ -546,13 +567,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         const moveType = input.dataset.type ? input.dataset.type.toLowerCase() : "";
         const movePower = input.dataset.power;
 
+        // Skip Dark/Steel moves in Gen 1
+        if (generation === 1 && (moveType === "dark" || moveType === "steel")) {
+          console.log(`Skipping ${moveType} move in Gen 1`);
+          return;
+        }
+
         if (!moveName || !moveType || movePower === "null") {
           console.log(`Slot ${slotIndex} move ${moveIndex + 1}: empty or invalid`);
           return;
         }
 
         const typeData = typeEffectivenessData[moveType];
-
         if (!typeData) {
           console.warn(`No effectiveness data for move type: ${moveType}`);
           return;
@@ -562,6 +588,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log(`Move ${moveIndex + 1}: ${moveName} (${moveType}), STAB: ${isStab}`);
 
         typeData.strong.forEach(targetType => {
+          if (generation === 1 && (targetType.toLowerCase() === "dark" || targetType.toLowerCase() === "steel")) return;
+
           console.log(`- Super effective against: ${targetType}`);
           if (!moveEffectiveness[targetType]) {
             moveEffectiveness[targetType] = { count: 0, hasStab: false };
@@ -582,39 +610,120 @@ document.addEventListener("DOMContentLoaded", async () => {
   function displayMoveEffectiveness(moveEffectiveness) {
     if (!effectivenessDiv) return;
 
-    // Create the container for type pills
     const container = document.createElement("div");
     container.classList.add("type-container");
 
-    // Iterate over each target type and its associated data
-    Object.entries(moveEffectiveness).forEach(([targetType, data]) => {
-      // Skip Fairy-type for generations before Gen 6
-      if (generation < 6 && targetType === "fairy") return;
+    const allTypes = Object.keys(typeEffectivenessData).filter(type => {
+      const lowerType = type.toLowerCase();
+      // Filter out types based on generation
+      if (generation === 1 && (lowerType === "dark" || lowerType === "steel")) return false;
+      if (generation < 6 && lowerType === "fairy") return false;
+      return !['stellar', 'unknown'].includes(lowerType);
+    });
 
+    allTypes.forEach(targetType => {
+      const effectivenessData = moveEffectiveness[targetType];
       const pill = document.createElement("span");
       pill.classList.add("type-pill", `type-${targetType}`);
-      // Add an extra class if at least one move for this target type was STAB
-      if (data.hasStab) {
-        pill.classList.add("stab-effective");
+
+      if (!effectivenessData) {
+        pill.classList.add("greyed-out");
+        pill.textContent = `${targetType} (0)`;
+      } else {
+        if (effectivenessData.hasStab) {
+          pill.classList.add("stab-effective");
+        }
+        pill.textContent = `${targetType} (${effectivenessData.count})`;
       }
-      pill.textContent = `${targetType} (${data.count})`;
       container.appendChild(pill);
     });
 
-    // Clear previous content from effectivenessDiv
     effectivenessDiv.innerHTML = "";
-
-    // Only add the heading and container if there are any types to display
     if (container.childElementCount > 0) {
       const heading = document.createElement("h3");
       heading.textContent = "Super Effective Move Coverage";
       effectivenessDiv.appendChild(heading);
       effectivenessDiv.appendChild(container);
-      // Optionally, make sure the container is visible:
       effectivenessDiv.style.display = "block";
     } else {
-      // Hide the effectivenessDiv when there are no types to show
       effectivenessDiv.style.display = "none";
+    }
+  }
+
+  function calculateWeaknesses() {
+    const weaknesses = {};
+    console.groupCollapsed("[DEBUG] Calculating weaknesses");
+
+    party.forEach((pokemonId) => {
+      const pokemonKey = Object.keys(pokemonData)[pokemonId - 1];
+      const pokemon = pokemonData[pokemonKey];
+      let displayTypes = [...pokemon.types];
+
+      if (generation < 6 && historicalTypes[pokemonId]) {
+        displayTypes = historicalTypes[pokemonId].types;
+      }
+
+      const defendingTypes = displayTypes.map(type => type.toLowerCase());
+      console.log(`Processing weaknesses for #${pokemonId} (${pokemonKey}) with types:`, defendingTypes);
+
+      Object.entries(typeEffectivenessData).forEach(([attackingType, effectiveness]) => {
+        const lowerAttack = attackingType.toLowerCase();
+        // Filter out types based on generation
+        if ((generation < 6 && lowerAttack === "fairy") ||
+            (generation === 1 && (lowerAttack === "dark" || lowerAttack === "steel"))) {
+          return;
+        }
+
+        let multiplier = 1;
+        defendingTypes.forEach(defendingType => {
+          if (attackingType === "ground" && defendingType === "electric") {
+            multiplier *= 2;
+            return;
+          }
+          if (effectiveness.immune.includes(defendingType)) {
+            multiplier = 0;
+            return;
+          }
+          if (effectiveness.strong.includes(defendingType)) multiplier *= 2;
+          if (effectiveness.weak.includes(defendingType)) multiplier *= 0.5;
+        });
+
+        if (multiplier > 1) {
+          weaknesses[attackingType] = weaknesses[attackingType] || { count: 0, multipliers: [] };
+          weaknesses[attackingType].count++;
+          weaknesses[attackingType].multipliers.push(multiplier);
+        }
+      });
+    });
+
+    console.log("Final weaknesses:", weaknesses);
+    console.groupEnd();
+    displayWeaknesses(weaknesses);
+  }
+
+  function displayWeaknesses(weaknesses) {
+    const weaknessesDiv = document.getElementById("weaknesses");
+    weaknessesDiv.innerHTML = "";
+    const container = document.createElement("div");
+    container.classList.add("type-container");
+
+    Object.entries(weaknesses).forEach(([type, data]) => {
+      // Final safeguard for Gen 1
+      if (generation === 1 && (type.toLowerCase() === "dark" || type.toLowerCase() === "steel")) return;
+
+      const pill = document.createElement("span");
+      pill.classList.add("type-pill", `type-${type}`);
+      const has4x = data.multipliers.some(m => m >= 4);
+      pill.textContent = `${type} (${data.count})`;
+      if (has4x) pill.classList.add("super-effective");
+      container.appendChild(pill);
+    });
+
+    if (container.children.length > 0) {
+      const heading = document.createElement("h3");
+      heading.textContent = "Party Weaknesses";
+      weaknessesDiv.appendChild(heading);
+      weaknessesDiv.appendChild(container);
     }
   }
 
