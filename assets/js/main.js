@@ -53,8 +53,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   detailsBtn.addEventListener("click", () => {
     header.classList.toggle("expanded");
     effectivenessDiv.classList.toggle("expanded");
-    weaknessesDiv.classList.toggle("expanded"); // Add this line
+    weaknessesDiv.classList.toggle("expanded");
     detailsBtn.classList.toggle("expanded");
+    moreDetails.classList.toggle("expanded");
 
     detailsBtn.textContent = header.classList.contains("expanded")
       ? "Less Details"
@@ -432,7 +433,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Update the getMovesForPokemon function
   function updateMoveSuggestions(pokemonId) {
     const datalist = document.getElementById("move-suggestions");
-    datalist.innerHTML = ""; // Clear previous options
 
     if (!pokemonId || !generation) return;
 
@@ -473,6 +473,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return acc;
     }, {});
 
+    datalist.innerHTML = "";
     // Add moves to datalist
     Object.values(uniqueMoves).forEach((move) => {
       const option = document.createElement("option");
@@ -485,27 +486,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   document.querySelectorAll(".move-input").forEach((input) => {
-    input.addEventListener("focusin", function () {
-      const slot = this.closest(".moves-container").previousElementSibling.previousElementSibling;
+    input.addEventListener("focusin", () => {
+      const slot = input.closest(".moves-container").previousElementSibling.previousElementSibling;
       const pokemonId = parseInt(slot.id);
-
-      // Get the datalist element
-      const datalist = document.getElementById("move-suggestions");
-
-      // Clear old options
-      datalist.innerHTML = "";
-
-      // Update move suggestions
-      const moves = getMoveSuggestions(pokemonId); // Assuming this function returns an array of moves
-      moves.forEach((move) => {
-        const option = document.createElement("option");
-        option.value = move;
-        datalist.appendChild(option);
-      });
-
+      updateMoveSuggestions(pokemonId);
     });
   });
-
 
   // Update the autocomplete event listeners
   document.querySelectorAll(".move-input").forEach((input) => {
@@ -724,6 +710,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       heading.textContent = "Party Weaknesses";
       weaknessesDiv.appendChild(heading);
       weaknessesDiv.appendChild(container);
+
+      weaknessesDiv.classList.remove("empty");
+    } else {
+      weaknessesDiv.classList.add("empty");
     }
   }
 
