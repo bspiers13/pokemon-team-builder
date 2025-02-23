@@ -497,9 +497,11 @@ input::-webkit-calendar-picker-indicator {
 }
 
 
+/*
 #weaknesses {
   display: none;
 }
+*/
 
 /*
 #header.expanded #weaknesses {
