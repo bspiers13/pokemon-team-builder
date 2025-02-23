@@ -79,15 +79,6 @@ body::after {
   gap: 10px;
 }
 
-/*
- More Details container 
-#moreDetails {
-  max-width: 0;
-  width: 100%;
-  text-align: center;
-}
-*/
-
 /* More Details Button */
 #detailsBtn {
   padding: 3px 6px;
@@ -95,10 +86,15 @@ body::after {
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 #detailsBtn:hover {
   background-color: #555;
+}
+
+#detailsBtn.expanded {
+  /*margin-top: 30px;*/
 }
 
 /* Slot Styling */
@@ -366,7 +362,7 @@ label {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1px;
-  padding: 5px 0;
+  /*padding: 5px 0;*/
   transition: all 0.2s ease;
   pointer-events: none;
 }
@@ -474,7 +470,6 @@ input::-webkit-calendar-picker-indicator {
   max-height: 500px;
   opacity: 1;
   padding: 10px 0 20px 0;
-  border-radius: 8px;
 }
 
 #weaknesses h3 {
@@ -496,18 +491,9 @@ input::-webkit-calendar-picker-indicator {
   transition: transform 0.1s ease;
 }
 
-
-/*
-#weaknesses {
-  display: none;
+#weaknesses.empty {
+  padding: 0;
 }
-*/
-
-/*
-#header.expanded #weaknesses {
-  display: block;
-}
-*/
 
 .type-pill.greyed-out {
   opacity: 0.4;
@@ -516,13 +502,13 @@ input::-webkit-calendar-picker-indicator {
 }
 
 #moreDetails {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   max-width: 900px;
 }
+
+#moreDetails.expanded {
+  padding: 0 0 10px;
+}
+
 
 /*
 @media screen and (max-width: 1920px) {
