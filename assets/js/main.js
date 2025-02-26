@@ -662,14 +662,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         let multiplier = 1;
         defendingTypes.forEach(defendingType => {
-          if (attackingType === "ground" && defendingType === "electric") {
-            multiplier *= 2;
-            return;
-          }
-          if (effectiveness.immune.includes(defendingType)) {
-            multiplier = 0;
-            return;
-          }
+          //if ((attackingType === "ground" && defendingType === "electric") || (attackingType === "dark" && defendingType === "psychic")) {
+          //  multiplier *= 2;
+          //  return;
+          //}
+          //if (effectiveness.immune.includes(defendingType)) {
+          //  multiplier = 0;
+          //  return;
+          //}
           if (effectiveness.strong.includes(defendingType)) multiplier *= 2;
           if (effectiveness.weak.includes(defendingType)) multiplier *= 0.5;
         });
