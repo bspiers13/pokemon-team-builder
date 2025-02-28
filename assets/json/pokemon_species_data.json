@@ -159,90 +159,6 @@
         "is_mythical": false,
         "shape": "upright"
     },
-    "charizard-mega-x": {
-        "types": [
-            "fire",
-            "dragon"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "monster",
-            "dragon"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/2/"
-        },
-        "evolves_from_species": {
-            "name": "charmeleon",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/5/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 1,
-        "generation": "generation-i",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 6,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "charizard-mega-y": {
-        "types": [
-            "fire",
-            "flying"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "monster",
-            "dragon"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/2/"
-        },
-        "evolves_from_species": {
-            "name": "charmeleon",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/5/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 1,
-        "generation": "generation-i",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 6,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "charizard-gmax": {
-        "types": [
-            "fire",
-            "flying"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "monster",
-            "dragon"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/2/"
-        },
-        "evolves_from_species": {
-            "name": "charmeleon",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/5/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 1,
-        "generation": "generation-i",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 6,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
     "squirtle": {
         "types": [
             "water"
@@ -576,86 +492,8 @@
         "is_mythical": false,
         "shape": "quadruped"
     },
-    "rattata-alola": {
-        "types": [
-            "dark",
-            "normal"
-        ],
-        "color": "purple",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/7/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": true,
-        "id": 19,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
     "raticate": {
         "types": [
-            "normal"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/7/"
-        },
-        "evolves_from_species": {
-            "name": "rattata",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/19/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": true,
-        "id": 20,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "raticate-alola": {
-        "types": [
-            "dark",
-            "normal"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/7/"
-        },
-        "evolves_from_species": {
-            "name": "rattata",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/19/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": true,
-        "id": 20,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "raticate-totem-alola": {
-        "types": [
-            "dark",
             "normal"
         ],
         "color": "brown",
@@ -836,34 +674,6 @@
         "is_mythical": false,
         "shape": "upright"
     },
-    "raichu-alola": {
-        "types": [
-            "electric",
-            "psychic"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground",
-            "fairy"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/10/"
-        },
-        "evolves_from_species": {
-            "name": "pikachu",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/25/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": true,
-        "id": 26,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
     "sandshrew": {
         "types": [
             "ground"
@@ -887,60 +697,9 @@
         "is_mythical": false,
         "shape": "upright"
     },
-    "sandshrew-alola": {
-        "types": [
-            "ice",
-            "steel"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/11/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 27,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
     "sandslash": {
         "types": [
             "ground"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/11/"
-        },
-        "evolves_from_species": {
-            "name": "sandshrew",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/27/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 28,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "sandslash-alola": {
-        "types": [
-            "ice",
-            "steel"
         ],
         "color": "yellow",
         "egg_groups": [
@@ -1195,59 +954,9 @@
         "is_mythical": false,
         "shape": "quadruped"
     },
-    "vulpix-alola": {
-        "types": [
-            "ice"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/15/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 6,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 37,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
     "ninetales": {
         "types": [
             "fire"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/15/"
-        },
-        "evolves_from_species": {
-            "name": "vulpix",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/37/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 6,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 38,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "ninetales-alola": {
-        "types": [
-            "ice",
-            "fairy"
         ],
         "color": "yellow",
         "egg_groups": [
@@ -1581,60 +1290,9 @@
         "is_mythical": false,
         "shape": "blob"
     },
-    "diglett-alola": {
-        "types": [
-            "ground",
-            "steel"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/21/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 50,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "blob"
-    },
     "dugtrio": {
         "types": [
             "ground"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/21/"
-        },
-        "evolves_from_species": {
-            "name": "diglett",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/50/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 51,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "heads"
-    },
-    "dugtrio-alola": {
-        "types": [
-            "ground",
-            "steel"
         ],
         "color": "brown",
         "egg_groups": [
@@ -1681,104 +1339,9 @@
         "is_mythical": false,
         "shape": "quadruped"
     },
-    "meowth-alola": {
-        "types": [
-            "dark"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/22/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 52,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "meowth-galar": {
-        "types": [
-            "steel"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/22/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 52,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "meowth-gmax": {
-        "types": [
-            "normal"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/22/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 52,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
     "persian": {
         "types": [
             "normal"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/22/"
-        },
-        "evolves_from_species": {
-            "name": "meowth",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/52/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 53,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "persian-alola": {
-        "types": [
-            "dark"
         ],
         "color": "yellow",
         "egg_groups": [
@@ -1925,60 +1488,9 @@
         "is_mythical": false,
         "shape": "quadruped"
     },
-    "growlithe-hisui": {
-        "types": [
-            "fire",
-            "rock"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/25/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 2,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 58,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
     "arcanine": {
         "types": [
             "fire"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/25/"
-        },
-        "evolves_from_species": {
-            "name": "growlithe",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/58/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 2,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 59,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "arcanine-hisui": {
-        "types": [
-            "fire",
-            "rock"
         ],
         "color": "brown",
         "egg_groups": [
@@ -2381,61 +1893,10 @@
         "is_mythical": false,
         "shape": "arms"
     },
-    "geodude-alola": {
-        "types": [
-            "rock",
-            "electric"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "mineral"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/31/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 74,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "arms"
-    },
     "graveler": {
         "types": [
             "rock",
             "ground"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "mineral"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/31/"
-        },
-        "evolves_from_species": {
-            "name": "geodude",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/74/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 75,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
-    "graveler-alola": {
-        "types": [
-            "rock",
-            "electric"
         ],
         "color": "brown",
         "egg_groups": [
@@ -2486,33 +1947,6 @@
         "is_mythical": false,
         "shape": "humanoid"
     },
-    "golem-alola": {
-        "types": [
-            "rock",
-            "electric"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "mineral"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/31/"
-        },
-        "evolves_from_species": {
-            "name": "graveler",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/75/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 76,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
     "ponyta": {
         "types": [
             "fire"
@@ -2536,59 +1970,9 @@
         "is_mythical": false,
         "shape": "quadruped"
     },
-    "ponyta-galar": {
-        "types": [
-            "psychic"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/32/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 77,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
     "rapidash": {
         "types": [
             "fire"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/32/"
-        },
-        "evolves_from_species": {
-            "name": "ponyta",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/77/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 78,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "rapidash-galar": {
-        "types": [
-            "psychic",
-            "fairy"
         ],
         "color": "yellow",
         "egg_groups": [
@@ -2637,89 +2021,9 @@
         "is_mythical": false,
         "shape": "quadruped"
     },
-    "slowpoke-galar": {
-        "types": [
-            "psychic"
-        ],
-        "color": "pink",
-        "egg_groups": [
-            "monster",
-            "water1"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/33/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 79,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
     "slowbro": {
         "types": [
             "water",
-            "psychic"
-        ],
-        "color": "pink",
-        "egg_groups": [
-            "monster",
-            "water1"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/33/"
-        },
-        "evolves_from_species": {
-            "name": "slowpoke",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/79/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 80,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "slowbro-mega": {
-        "types": [
-            "water",
-            "psychic"
-        ],
-        "color": "pink",
-        "egg_groups": [
-            "monster",
-            "water1"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/33/"
-        },
-        "evolves_from_species": {
-            "name": "slowpoke",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/79/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 80,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "slowbro-galar": {
-        "types": [
-            "poison",
             "psychic"
         ],
         "color": "pink",
@@ -2800,30 +2104,6 @@
         "types": [
             "normal",
             "flying"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "flying",
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/35/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 83,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "wings"
-    },
-    "farfetchd-galar": {
-        "types": [
-            "fighting"
         ],
         "color": "brown",
         "egg_groups": [
@@ -2971,60 +2251,9 @@
         "is_mythical": false,
         "shape": "arms"
     },
-    "grimer-alola": {
-        "types": [
-            "poison",
-            "dark"
-        ],
-        "color": "purple",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/38/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 88,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "arms"
-    },
     "muk": {
         "types": [
             "poison"
-        ],
-        "color": "purple",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/38/"
-        },
-        "evolves_from_species": {
-            "name": "grimer",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/88/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 89,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "arms"
-    },
-    "muk-alola": {
-        "types": [
-            "poison",
-            "dark"
         ],
         "color": "purple",
         "egg_groups": [
@@ -3321,60 +2550,9 @@
         "is_mythical": false,
         "shape": "ball"
     },
-    "voltorb-hisui": {
-        "types": [
-            "electric",
-            "grass"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "mineral"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/44/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 100,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
     "electrode": {
         "types": [
             "electric"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "mineral"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/44/"
-        },
-        "evolves_from_species": {
-            "name": "voltorb",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/100/"
-        },
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 101,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
-    "electrode-hisui": {
-        "types": [
-            "electric",
-            "grass"
         ],
         "color": "red",
         "egg_groups": [
@@ -3449,33 +2627,6 @@
         "is_mythical": false,
         "shape": "legs"
     },
-    "exeggutor-alola": {
-        "types": [
-            "grass",
-            "dragon"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "plant"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/45/"
-        },
-        "evolves_from_species": {
-            "name": "exeggcute",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/102/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 103,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "legs"
-    },
     "cubone": {
         "types": [
             "ground"
@@ -3502,60 +2653,6 @@
     "marowak": {
         "types": [
             "ground"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "monster"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/46/"
-        },
-        "evolves_from_species": {
-            "name": "cubone",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/104/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 105,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "marowak-alola": {
-        "types": [
-            "fire",
-            "ghost"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "monster"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/46/"
-        },
-        "evolves_from_species": {
-            "name": "cubone",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/104/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 105,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "marowak-totem": {
-        "types": [
-            "fire",
-            "ghost"
         ],
         "color": "brown",
         "egg_groups": [
@@ -3680,33 +2777,6 @@
     "weezing": {
         "types": [
             "poison"
-        ],
-        "color": "purple",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/49/"
-        },
-        "evolves_from_species": {
-            "name": "koffing",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/109/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 110,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "heads"
-    },
-    "weezing-galar": {
-        "types": [
-            "poison",
-            "fairy"
         ],
         "color": "purple",
         "egg_groups": [
@@ -4032,33 +3102,6 @@
         "is_mythical": false,
         "shape": "humanoid"
     },
-    "mr-mime-galar": {
-        "types": [
-            "ice",
-            "psychic"
-        ],
-        "color": "pink",
-        "egg_groups": [
-            "humanshape"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/57/"
-        },
-        "evolves_from_species": {
-            "name": "mime-jr",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/439/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 122,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
     "scyther": {
         "types": [
             "bug",
@@ -4185,104 +3228,9 @@
         "is_mythical": false,
         "shape": "humanoid"
     },
-    "pinsir-mega": {
-        "types": [
-            "bug",
-            "flying"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "bug"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/62/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 127,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
     "tauros": {
         "types": [
             "normal"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/63/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 0,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 128,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "tauros-paldea-combat-breed": {
-        "types": [
-            "fighting"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/63/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 0,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 128,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "tauros-paldea-blaze-breed": {
-        "types": [
-            "fighting",
-            "fire"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/63/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 0,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 128,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "tauros-paldea-aqua-breed": {
-        "types": [
-            "fighting",
-            "water"
         ],
         "color": "brown",
         "egg_groups": [
@@ -4331,34 +3279,6 @@
         "types": [
             "water",
             "flying"
-        ],
-        "color": "blue",
-        "egg_groups": [
-            "water2",
-            "dragon"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/64/"
-        },
-        "evolves_from_species": {
-            "name": "magikarp",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/129/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": true,
-        "id": 130,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "squiggle"
-    },
-    "gyarados-mega": {
-        "types": [
-            "water",
-            "dark"
         ],
         "color": "blue",
         "egg_groups": [
@@ -4735,30 +3655,6 @@
         "is_mythical": false,
         "shape": "wings"
     },
-    "articuno-galar": {
-        "types": [
-            "psychic",
-            "flying"
-        ],
-        "color": "blue",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/73/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 144,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "wings"
-    },
     "zapdos": {
         "types": [
             "electric",
@@ -4783,57 +3679,9 @@
         "is_mythical": false,
         "shape": "wings"
     },
-    "zapdos-galar": {
-        "types": [
-            "fighting",
-            "flying"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/74/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 145,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "wings"
-    },
     "moltres": {
         "types": [
             "fire",
-            "flying"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/75/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 146,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "wings"
-    },
-    "moltres-galar": {
-        "types": [
-            "dark",
             "flying"
         ],
         "color": "yellow",
@@ -4935,53 +3783,6 @@
         "shape": "upright"
     },
     "mewtwo": {
-        "types": [
-            "psychic"
-        ],
-        "color": "purple",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/77/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 150,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "mewtwo-mega-x": {
-        "types": [
-            "psychic",
-            "fighting"
-        ],
-        "color": "purple",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/77/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-i",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 150,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "mewtwo-mega-y": {
         "types": [
             "psychic"
         ],
@@ -5157,33 +3958,6 @@
     "typhlosion": {
         "types": [
             "fire"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/80/"
-        },
-        "evolves_from_species": {
-            "name": "quilava",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/156/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 1,
-        "generation": "generation-ii",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 157,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "typhlosion-hisui": {
-        "types": [
-            "fire",
-            "ghost"
         ],
         "color": "yellow",
         "egg_groups": [
@@ -5815,34 +4589,6 @@
         "is_mythical": false,
         "shape": "upright"
     },
-    "ampharos-mega": {
-        "types": [
-            "electric",
-            "dragon"
-        ],
-        "color": "yellow",
-        "egg_groups": [
-            "monster",
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/89/"
-        },
-        "evolves_from_species": {
-            "name": "flaaffy",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/180/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-ii",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 181,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
     "bellossom": {
         "types": [
             "grass"
@@ -6179,31 +4925,6 @@
         "is_mythical": false,
         "shape": "legs"
     },
-    "wooper-paldea": {
-        "types": [
-            "poison",
-            "ground"
-        ],
-        "color": "blue",
-        "egg_groups": [
-            "water1",
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/96/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-ii",
-        "growth_rate": "medium",
-        "has_gender_differences": true,
-        "id": 194,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "legs"
-    },
     "quagsire": {
         "types": [
             "water",
@@ -6311,34 +5032,6 @@
     "slowking": {
         "types": [
             "water",
-            "psychic"
-        ],
-        "color": "pink",
-        "egg_groups": [
-            "monster",
-            "water1"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/33/"
-        },
-        "evolves_from_species": {
-            "name": "slowpoke",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/79/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-ii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 199,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "slowking-galar": {
-        "types": [
-            "poison",
             "psychic"
         ],
         "color": "pink",
@@ -6659,30 +5352,6 @@
         "is_mythical": false,
         "shape": "fish"
     },
-    "qwilfish-hisui": {
-        "types": [
-            "dark",
-            "poison"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "water2"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/106/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-ii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 211,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "fish"
-    },
     "scizor": {
         "types": [
             "bug",
@@ -6762,30 +5431,6 @@
         "types": [
             "dark",
             "ice"
-        ],
-        "color": "black",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/109/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-ii",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": true,
-        "id": 215,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "sneasel-hisui": {
-        "types": [
-            "fighting",
-            "poison"
         ],
         "color": "black",
         "egg_groups": [
@@ -6960,30 +5605,6 @@
         "types": [
             "water",
             "rock"
-        ],
-        "color": "pink",
-        "egg_groups": [
-            "water1",
-            "water3"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/113/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 6,
-        "generation": "generation-ii",
-        "growth_rate": "fast",
-        "has_gender_differences": false,
-        "id": 222,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "armor"
-    },
-    "corsola-galar": {
-        "types": [
-            "ghost"
         ],
         "color": "pink",
         "egg_groups": [
@@ -7797,34 +6418,6 @@
         "is_mythical": false,
         "shape": "upright"
     },
-    "sceptile-mega": {
-        "types": [
-            "grass",
-            "dragon"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "monster",
-            "dragon"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/130/"
-        },
-        "evolves_from_species": {
-            "name": "grovyle",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/253/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 1,
-        "generation": "generation-iii",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 254,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
     "torchic": {
         "types": [
             "fire"
@@ -8054,59 +6647,8 @@
         "is_mythical": false,
         "shape": "quadruped"
     },
-    "zigzagoon-galar": {
-        "types": [
-            "dark",
-            "normal"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/134/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-iii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 263,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
     "linoone": {
         "types": [
-            "normal"
-        ],
-        "color": "white",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/134/"
-        },
-        "evolves_from_species": {
-            "name": "zigzagoon",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/263/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-iii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 264,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "linoone-galar": {
-        "types": [
-            "dark",
             "normal"
         ],
         "color": "white",
@@ -9216,32 +7758,6 @@
         "is_mythical": false,
         "shape": "upright"
     },
-    "aggron-mega": {
-        "types": [
-            "steel"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "monster"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/151/"
-        },
-        "evolves_from_species": {
-            "name": "lairon",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/305/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-iii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 306,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
     "meditite": {
         "types": [
             "fighting",
@@ -9947,34 +8463,6 @@
         "is_mythical": false,
         "shape": "wings"
     },
-    "altaria-mega": {
-        "types": [
-            "dragon",
-            "fairy"
-        ],
-        "color": "blue",
-        "egg_groups": [
-            "flying",
-            "dragon"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/168/"
-        },
-        "evolves_from_species": {
-            "name": "swablu",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/333/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-iii",
-        "growth_rate": "slow-then-very-fast",
-        "has_gender_differences": false,
-        "id": 334,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "wings"
-    },
     "zangoose": {
         "types": [
             "normal"
@@ -10380,78 +8868,6 @@
     "castform": {
         "types": [
             "normal"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "fairy",
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/179/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-iii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 351,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
-    "castform-sunny": {
-        "types": [
-            "fire"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "fairy",
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/179/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-iii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 351,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
-    "castform-rainy": {
-        "types": [
-            "water"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "fairy",
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/179/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-iii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 351,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
-    "castform-snowy": {
-        "types": [
-            "ice"
         ],
         "color": "gray",
         "egg_groups": [
@@ -11263,30 +9679,6 @@
         "is_mythical": false,
         "shape": "upright"
     },
-    "groudon-primal": {
-        "types": [
-            "ground",
-            "fire"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/199/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-iii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 383,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "upright"
-    },
     "rayquaza": {
         "types": [
             "dragon",
@@ -11336,9 +9728,7 @@
         "shape": "humanoid"
     },
     "deoxys": {
-        "types": [
-            "psychic"
-        ],
+        "types": [],
         "color": "red",
         "egg_groups": [
             "no-eggs"
@@ -12025,65 +10415,8 @@
         "is_mythical": false,
         "shape": "blob"
     },
-    "wormadam-plant": {
-        "types": [
-            "bug",
-            "grass"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "bug"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/213/"
-        },
-        "evolves_from_species": {
-            "name": "burmy",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/412/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 8,
-        "generation": "generation-iv",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 413,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "blob"
-    },
-    "wormadam-sandy": {
-        "types": [
-            "bug",
-            "ground"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "bug"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/213/"
-        },
-        "evolves_from_species": {
-            "name": "burmy",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/412/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 8,
-        "generation": "generation-iv",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 413,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "blob"
-    },
-    "wormadam-trash": {
-        "types": [
-            "bug",
-            "steel"
-        ],
+    "wormadam": {
+        "types": [],
         "color": "green",
         "egg_groups": [
             "bug"
@@ -12466,34 +10799,6 @@
     "lopunny": {
         "types": [
             "normal"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "ground",
-            "humanshape"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/220/"
-        },
-        "evolves_from_species": {
-            "name": "buneary",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/427/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-iv",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 428,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "lopunny-mega": {
-        "types": [
-            "normal",
-            "fighting"
         ],
         "color": "brown",
         "egg_groups": [
@@ -13826,126 +12131,6 @@
         "is_mythical": false,
         "shape": "ball"
     },
-    "rotom-heat": {
-        "types": [
-            "electric",
-            "fire"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/240/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-iv",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 479,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
-    "rotom-wash": {
-        "types": [
-            "electric",
-            "water"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/240/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-iv",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 479,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
-    "rotom-frost": {
-        "types": [
-            "electric",
-            "ice"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/240/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-iv",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 479,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
-    "rotom-fan": {
-        "types": [
-            "electric",
-            "flying"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/240/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-iv",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 479,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
-    "rotom-mow": {
-        "types": [
-            "electric",
-            "grass"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/240/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-iv",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 479,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "ball"
-    },
     "uxie": {
         "types": [
             "psychic"
@@ -14111,10 +12296,7 @@
         "shape": "humanoid"
     },
     "giratina": {
-        "types": [
-            "ghost",
-            "dragon"
-        ],
+        "types": [],
         "color": "black",
         "egg_groups": [
             "no-eggs"
@@ -14228,34 +12410,8 @@
         "is_mythical": true,
         "shape": "humanoid"
     },
-    "shaymin-land": {
-        "types": [
-            "grass"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/253/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-iv",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 492,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": true,
-        "shape": "quadruped"
-    },
-    "shaymin-sky": {
-        "types": [
-            "grass",
-            "flying"
-        ],
+    "shaymin": {
+        "types": [],
         "color": "green",
         "egg_groups": [
             "no-eggs"
@@ -14529,33 +12685,6 @@
     "samurott": {
         "types": [
             "water"
-        ],
-        "color": "blue",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/258/"
-        },
-        "evolves_from_species": {
-            "name": "dewott",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/502/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 1,
-        "generation": "generation-v",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 503,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "samurott-hisui": {
-        "types": [
-            "water",
-            "dark"
         ],
         "color": "blue",
         "egg_groups": [
@@ -15276,30 +13405,6 @@
         "is_mythical": false,
         "shape": "upright"
     },
-    "audino-mega": {
-        "types": [
-            "normal",
-            "fairy"
-        ],
-        "color": "pink",
-        "egg_groups": [
-            "fairy"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/271/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-v",
-        "growth_rate": "fast",
-        "has_gender_differences": false,
-        "id": 531,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
     "timburr": {
         "types": [
             "fighting"
@@ -15756,37 +13861,8 @@
         "is_mythical": false,
         "shape": "blob"
     },
-    "lilligant-hisui": {
-        "types": [
-            "grass",
-            "fighting"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "plant"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/279/"
-        },
-        "evolves_from_species": {
-            "name": "petilil",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/548/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 8,
-        "generation": "generation-v",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 549,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "blob"
-    },
     "basculin": {
-        "types": [
-            "water"
-        ],
+        "types": [],
         "color": "green",
         "egg_groups": [
             "water2"
@@ -15907,113 +13983,8 @@
         "is_mythical": false,
         "shape": "humanoid"
     },
-    "darumaka-galar": {
-        "types": [
-            "ice"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/282/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-v",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 554,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
-    "darmanitan-standard": {
-        "types": [
-            "fire"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/282/"
-        },
-        "evolves_from_species": {
-            "name": "darumaka",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/554/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-v",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 555,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "darmanitan-zen": {
-        "types": [
-            "fire",
-            "psychic"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/282/"
-        },
-        "evolves_from_species": {
-            "name": "darumaka",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/554/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-v",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 555,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "darmanitan-galar-standard": {
-        "types": [
-            "ice"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/282/"
-        },
-        "evolves_from_species": {
-            "name": "darumaka",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/554/"
-        },
-        "forms_switchable": true,
-        "gender_rate": 4,
-        "generation": "generation-v",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 555,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "darmanitan-galar-zen": {
-        "types": [
-            "ice",
-            "fire"
-        ],
+    "darmanitan": {
+        "types": [],
         "color": "red",
         "egg_groups": [
             "ground"
@@ -16191,31 +14162,6 @@
     },
     "yamask": {
         "types": [
-            "ghost"
-        ],
-        "color": "black",
-        "egg_groups": [
-            "mineral",
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/287/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-v",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 562,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "arms"
-    },
-    "yamask-galar": {
-        "types": [
-            "ground",
             "ghost"
         ],
         "color": "black",
@@ -16443,60 +14389,9 @@
         "is_mythical": false,
         "shape": "quadruped"
     },
-    "zorua-hisui": {
-        "types": [
-            "normal",
-            "ghost"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/291/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 1,
-        "generation": "generation-v",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 570,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
     "zoroark": {
         "types": [
             "dark"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "ground"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/291/"
-        },
-        "evolves_from_species": {
-            "name": "zorua",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/570/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 1,
-        "generation": "generation-v",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 571,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "zoroark-hisui": {
-        "types": [
-            "normal",
-            "ghost"
         ],
         "color": "gray",
         "egg_groups": [
@@ -17047,56 +14942,11 @@
         "is_mythical": false,
         "shape": "tentacles"
     },
-    "frillish-female": {
-        "types": [],
-        "color": "white",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/301/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-v",
-        "growth_rate": "medium",
-        "has_gender_differences": true,
-        "id": 592,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "tentacles"
-    },
     "jellicent": {
         "types": [
             "water",
             "ghost"
         ],
-        "color": "white",
-        "egg_groups": [
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/301/"
-        },
-        "evolves_from_species": {
-            "name": "frillish",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/592/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-v",
-        "growth_rate": "medium",
-        "has_gender_differences": true,
-        "id": 593,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "tentacles"
-    },
-    "jellicent-female": {
-        "types": [],
         "color": "white",
         "egg_groups": [
             "indeterminate"
@@ -17748,31 +15598,6 @@
         "is_mythical": false,
         "shape": "fish"
     },
-    "stunfisk-galar": {
-        "types": [
-            "ground",
-            "steel"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "water1",
-            "indeterminate"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/313/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-v",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 618,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "fish"
-    },
     "mienfoo": {
         "types": [
             "fighting"
@@ -18000,33 +15825,6 @@
     "braviary": {
         "types": [
             "normal",
-            "flying"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "flying"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/319/"
-        },
-        "evolves_from_species": {
-            "name": "rufflet",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/627/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 0,
-        "generation": "generation-v",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 628,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "wings"
-    },
-    "braviary-hisui": {
-        "types": [
-            "psychic",
             "flying"
         ],
         "color": "red",
@@ -18351,9 +16149,7 @@
         "shape": "quadruped"
     },
     "tornadus": {
-        "types": [
-            "flying"
-        ],
+        "types": [],
         "color": "green",
         "egg_groups": [
             "no-eggs"
@@ -18374,10 +16170,7 @@
         "shape": "arms"
     },
     "thundurus": {
-        "types": [
-            "electric",
-            "flying"
-        ],
+        "types": [],
         "color": "blue",
         "egg_groups": [
             "no-eggs"
@@ -18446,10 +16239,7 @@
         "shape": "upright"
     },
     "landorus": {
-        "types": [
-            "ground",
-            "flying"
-        ],
+        "types": [],
         "color": "brown",
         "egg_groups": [
             "no-eggs"
@@ -18494,10 +16284,7 @@
         "shape": "upright"
     },
     "keldeo": {
-        "types": [
-            "water",
-            "fighting"
-        ],
+        "types": [],
         "color": "yellow",
         "egg_groups": [
             "no-eggs"
@@ -18517,35 +16304,8 @@
         "is_mythical": true,
         "shape": "quadruped"
     },
-    "meloetta-aria": {
-        "types": [
-            "normal",
-            "psychic"
-        ],
-        "color": "white",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/335/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": true,
-        "gender_rate": -1,
-        "generation": "generation-v",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 648,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": true,
-        "shape": "humanoid"
-    },
-    "meloetta-pirouette": {
-        "types": [
-            "normal",
-            "fighting"
-        ],
+    "meloetta": {
+        "types": [],
         "color": "white",
         "egg_groups": [
             "no-eggs"
@@ -19295,9 +17055,7 @@
         "shape": "upright"
     },
     "meowstic": {
-        "types": [
-            "psychic"
-        ],
+        "types": [],
         "color": "blue",
         "egg_groups": [
             "ground"
@@ -19372,10 +17130,7 @@
         "shape": "heads"
     },
     "aegislash": {
-        "types": [
-            "steel",
-            "ghost"
-        ],
+        "types": [],
         "color": "brown",
         "egg_groups": [
             "mineral"
@@ -20011,62 +17766,8 @@
         "is_mythical": false,
         "shape": "squiggle"
     },
-    "sliggoo-hisui": {
-        "types": [
-            "steel",
-            "dragon"
-        ],
-        "color": "purple",
-        "egg_groups": [
-            "dragon"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/362/"
-        },
-        "evolves_from_species": {
-            "name": "goomy",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/704/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-vi",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 705,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "squiggle"
-    },
     "goodra": {
         "types": [
-            "dragon"
-        ],
-        "color": "purple",
-        "egg_groups": [
-            "dragon"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/362/"
-        },
-        "evolves_from_species": {
-            "name": "sliggoo",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/705/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-vi",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 706,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "upright"
-    },
-    "goodra-hisui": {
-        "types": [
-            "steel",
             "dragon"
         ],
         "color": "purple",
@@ -20169,10 +17870,7 @@
         "shape": "tentacles"
     },
     "pumpkaboo": {
-        "types": [
-            "ghost",
-            "grass"
-        ],
+        "types": [],
         "color": "brown",
         "egg_groups": [
             "indeterminate"
@@ -20193,10 +17891,7 @@
         "shape": "ball"
     },
     "gourgeist": {
-        "types": [
-            "ghost",
-            "grass"
-        ],
+        "types": [],
         "color": "brown",
         "egg_groups": [
             "indeterminate"
@@ -20246,34 +17941,6 @@
     "avalugg": {
         "types": [
             "ice"
-        ],
-        "color": "blue",
-        "egg_groups": [
-            "monster",
-            "mineral"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/366/"
-        },
-        "evolves_from_species": {
-            "name": "bergmite",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/712/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 4,
-        "generation": "generation-vi",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 713,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "avalugg-hisui": {
-        "types": [
-            "ice",
-            "rock"
         ],
         "color": "blue",
         "egg_groups": [
@@ -20399,10 +18066,7 @@
         "shape": "wings"
     },
     "zygarde": {
-        "types": [
-            "dragon",
-            "ground"
-        ],
+        "types": [],
         "color": "green",
         "egg_groups": [
             "no-eggs"
@@ -20450,30 +18114,6 @@
         "types": [
             "psychic",
             "ghost"
-        ],
-        "color": "purple",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/372/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-vi",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 720,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": true,
-        "shape": "arms"
-    },
-    "hoopa-unbound": {
-        "types": [
-            "psychic",
-            "dark"
         ],
         "color": "purple",
         "egg_groups": [
@@ -20573,33 +18213,6 @@
         "types": [
             "grass",
             "ghost"
-        ],
-        "color": "brown",
-        "egg_groups": [
-            "flying"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/374/"
-        },
-        "evolves_from_species": {
-            "name": "dartrix",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/723/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 1,
-        "generation": "generation-vii",
-        "growth_rate": "medium-slow",
-        "has_gender_differences": false,
-        "id": 724,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "wings"
-    },
-    "decidueye-hisui": {
-        "types": [
-            "grass",
-            "fighting"
         ],
         "color": "brown",
         "egg_groups": [
@@ -21032,83 +18645,8 @@
         "is_mythical": false,
         "shape": "armor"
     },
-    "oricorio-baile": {
-        "types": [
-            "fire",
-            "flying"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "flying"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/381/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 6,
-        "generation": "generation-vii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 741,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "wings"
-    },
-    "oricorio-pom-pom": {
-        "types": [
-            "electric",
-            "flying"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "flying"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/381/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 6,
-        "generation": "generation-vii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 741,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "wings"
-    },
-    "oricorio-pau": {
-        "types": [
-            "psychic",
-            "flying"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "flying"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/381/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": 6,
-        "generation": "generation-vii",
-        "growth_rate": "medium",
-        "has_gender_differences": false,
-        "id": 741,
-        "is_baby": false,
-        "is_legendary": false,
-        "is_mythical": false,
-        "shape": "wings"
-    },
-    "oricorio-sensu": {
-        "types": [
-            "ghost",
-            "flying"
-        ],
+    "oricorio": {
+        "types": [],
         "color": "red",
         "egg_groups": [
             "flying"
@@ -21205,9 +18743,7 @@
         "shape": "quadruped"
     },
     "lycanroc": {
-        "types": [
-            "rock"
-        ],
+        "types": [],
         "color": "brown",
         "egg_groups": [
             "ground"
@@ -21231,9 +18767,7 @@
         "shape": "quadruped"
     },
     "wishiwashi": {
-        "types": [
-            "water"
-        ],
+        "types": [],
         "color": "blue",
         "egg_groups": [
             "water2"
@@ -21932,10 +19466,7 @@
         "shape": "quadruped"
     },
     "minior": {
-        "types": [
-            "rock",
-            "flying"
-        ],
+        "types": [],
         "color": "brown",
         "egg_groups": [
             "mineral"
@@ -22029,10 +19560,7 @@
         "shape": "upright"
     },
     "mimikyu": {
-        "types": [
-            "ghost",
-            "fairy"
-        ],
+        "types": [],
         "color": "yellow",
         "egg_groups": [
             "indeterminate"
@@ -22571,78 +20099,6 @@
     "necrozma": {
         "types": [
             "psychic"
-        ],
-        "color": "black",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/421/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-vii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 800,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "arms"
-    },
-    "necrozma-dusk": {
-        "types": [
-            "psychic",
-            "steel"
-        ],
-        "color": "black",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/421/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-vii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 800,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "arms"
-    },
-    "necrozma-dawn": {
-        "types": [
-            "psychic",
-            "ghost"
-        ],
-        "color": "black",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/421/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-vii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 800,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "arms"
-    },
-    "necrozma-ultra": {
-        "types": [
-            "psychic",
-            "dragon"
         ],
         "color": "black",
         "egg_groups": [
@@ -23873,10 +21329,7 @@
         "shape": "upright"
     },
     "toxtricity": {
-        "types": [
-            "electric",
-            "poison"
-        ],
+        "types": [],
         "color": "purple",
         "egg_groups": [
             "humanshape"
@@ -24545,9 +21998,7 @@
         "shape": "legs"
     },
     "eiscue": {
-        "types": [
-            "ice"
-        ],
+        "types": [],
         "color": "blue",
         "egg_groups": [
             "water1",
@@ -24569,10 +22020,7 @@
         "shape": "upright"
     },
     "indeedee": {
-        "types": [
-            "psychic",
-            "normal"
-        ],
+        "types": [],
         "color": "purple",
         "egg_groups": [
             "fairy"
@@ -24593,10 +22041,7 @@
         "shape": "upright"
     },
     "morpeko": {
-        "types": [
-            "electric",
-            "dark"
-        ],
+        "types": [],
         "color": "yellow",
         "egg_groups": [
             "ground",
@@ -24893,57 +22338,9 @@
         "is_mythical": false,
         "shape": "quadruped"
     },
-    "zacian-crowned": {
-        "types": [
-            "fairy",
-            "steel"
-        ],
-        "color": "blue",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/467/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-viii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 888,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
     "zamazenta": {
         "types": [
             "fighting"
-        ],
-        "color": "red",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/468/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-viii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 889,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "quadruped"
-    },
-    "zamazenta-crowned": {
-        "types": [
-            "fighting",
-            "steel"
         ],
         "color": "red",
         "egg_groups": [
@@ -25011,92 +22408,8 @@
         "is_mythical": false,
         "shape": "upright"
     },
-    "urshifu-single-strike": {
-        "types": [
-            "fighting",
-            "dark"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/470/"
-        },
-        "evolves_from_species": {
-            "name": "kubfu",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/891/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 1,
-        "generation": "generation-viii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 892,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
-    "urshifu-rapid-strike": {
-        "types": [
-            "fighting",
-            "water"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/470/"
-        },
-        "evolves_from_species": {
-            "name": "kubfu",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/891/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 1,
-        "generation": "generation-viii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 892,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
-    "urshifu-single-strike-gmax": {
-        "types": [
-            "fighting",
-            "dark"
-        ],
-        "color": "gray",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/470/"
-        },
-        "evolves_from_species": {
-            "name": "kubfu",
-            "url": "https://pokeapi.co/api/v2/pokemon-species/891/"
-        },
-        "forms_switchable": false,
-        "gender_rate": 1,
-        "generation": "generation-viii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 892,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
-    "urshifu-rapid-strike-gmax": {
-        "types": [
-            "fighting",
-            "water"
-        ],
+    "urshifu": {
+        "types": [],
         "color": "gray",
         "egg_groups": [
             "no-eggs"
@@ -25259,54 +22572,6 @@
         "is_mythical": false,
         "shape": "humanoid"
     },
-    "calyrex-ice": {
-        "types": [
-            "psychic",
-            "ice"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/476/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-viii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 898,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
-    "calyrex-shadow": {
-        "types": [
-            "psychic",
-            "ghost"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/476/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-viii",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 898,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
     "wyrdeer": {
         "types": [
             "normal",
@@ -25389,10 +22654,7 @@
         "shape": "quadruped"
     },
     "basculegion": {
-        "types": [
-            "water",
-            "ghost"
-        ],
+        "types": [],
         "color": "green",
         "egg_groups": [
             "water2"
@@ -25470,10 +22732,7 @@
         "shape": "fish"
     },
     "enamorus": {
-        "types": [
-            "fairy",
-            "flying"
-        ],
+        "types": [],
         "color": "pink",
         "egg_groups": [
             "no-eggs"
@@ -25751,9 +23010,7 @@
         "shape": "quadruped"
     },
     "oinkologne": {
-        "types": [
-            "normal"
-        ],
+        "types": [],
         "color": "gray",
         "egg_groups": [
             "ground"
@@ -25977,9 +23234,7 @@
         "shape": "heads"
     },
     "maushold": {
-        "types": [
-            "normal"
-        ],
+        "types": [],
         "color": "white",
         "egg_groups": [
             "ground",
@@ -26133,10 +23388,7 @@
         "shape": "humanoid"
     },
     "squawkabilly": {
-        "types": [
-            "normal",
-            "flying"
-        ],
+        "types": [],
         "color": "green",
         "egg_groups": [
             "flying"
@@ -26960,9 +24212,7 @@
         "shape": "fish"
     },
     "palafin": {
-        "types": [
-            "water"
-        ],
+        "types": [],
         "color": "blue",
         "egg_groups": [
             "ground",
@@ -27305,10 +24555,7 @@
         "shape": "fish"
     },
     "tatsugiri": {
-        "types": [
-            "dragon",
-            "water"
-        ],
+        "types": [],
         "color": "pink",
         "egg_groups": [
             "water2"
@@ -27411,9 +24658,7 @@
         "shape": "quadruped"
     },
     "dudunsparce": {
-        "types": [
-            "normal"
-        ],
+        "types": [],
         "color": "yellow",
         "egg_groups": [
             "ground"
@@ -28278,78 +25523,6 @@
     "ogerpon": {
         "types": [
             "grass"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/543/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-ix",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 1017,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
-    "ogerpon-wellspring-mask": {
-        "types": [
-            "grass",
-            "water"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/543/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-ix",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 1017,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
-    "ogerpon-hearthflame-mask": {
-        "types": [
-            "grass",
-            "fire"
-        ],
-        "color": "green",
-        "egg_groups": [
-            "no-eggs"
-        ],
-        "evolution_chain": {
-            "url": "https://pokeapi.co/api/v2/evolution-chain/543/"
-        },
-        "evolves_from_species": null,
-        "forms_switchable": false,
-        "gender_rate": -1,
-        "generation": "generation-ix",
-        "growth_rate": "slow",
-        "has_gender_differences": false,
-        "id": 1017,
-        "is_baby": false,
-        "is_legendary": true,
-        "is_mythical": false,
-        "shape": "humanoid"
-    },
-    "ogerpon-cornerstone-mask": {
-        "types": [
-            "grass",
-            "rock"
         ],
         "color": "green",
         "egg_groups": [
